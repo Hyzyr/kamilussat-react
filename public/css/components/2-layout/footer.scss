@@ -1,0 +1,257 @@
+/// section footer
+.footer {
+  margin-top: auto;
+  padding: 98px 0 25px;
+  background: $primary-3;
+  position: relative;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 76px;
+  }
+  &__row {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    &-column {
+      flex: 1;
+      max-width: 466px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      &._lg {
+        gap: 12px;
+        max-width: 524px;
+        p {
+          color: $blue-100;
+        }
+      }
+      &._links {
+        flex: unset;
+      }
+    }
+    &-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &-button {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: $blue-90;
+      cursor: pointer;
+      .ico {
+        color: inherit;
+        width: 25px;
+        height: 25px;
+        transition: unset;
+      }
+      @include transition;
+      &:hover {
+        color: $primary;
+      }
+    }
+    &-box {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    &-link {
+      color: $blue-90;
+      line-height: 1;
+      @include transition;
+      &:hover {
+        color: $primary;
+      }
+    }
+    &-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .button {
+        width: 100%;
+        max-width: 178px;
+        margin-left: auto;
+      }
+    }
+    .input {
+      textarea {
+        min-height: 155px;
+        border-radius: 20px;
+        &::placeholder {
+          color: $blue-40;
+        }
+      }
+      input,
+      textarea {
+        padding: 1.12em 1.3em 0.92em;
+      }
+    }
+    h6 {
+      color: $primary-2;
+    }
+  }
+  &__copy {
+    color: $black-40;
+    text-align: center;
+    font-size: 16px;
+  }
+  .logo {
+    font-size: 24px;
+  }
+  .bg {
+    font-size: 22px;
+    z-index: 0;
+    &__circle {
+      right: -32%;
+      top: -9%;
+      span {
+        border-color: $primary;
+      }
+    }
+  }
+}
+@mixin footer-1380 {
+  .footer {
+    .bg {
+      font-size: 20px;
+      &__circle {
+        top: 6%;
+      }
+    }
+  }
+}
+@mixin footer-1160 {
+  .footer {
+    padding: 80px 0 25px;
+    &__inner {
+      gap: 60px;
+    }
+    &__row {
+      &-button {
+        font-size: 16px;
+      }
+      &-link {
+        font-size: 16px;
+      }
+    }
+    .logo {
+      font-size: 22px;
+    }
+    .bg {
+      font-size: 18px;
+      &__circle {
+        right: -50%;
+      }
+    }
+  }
+}
+@mixin footer-940 {
+  .footer {
+    &__row {
+      flex-wrap: wrap;
+      gap: 50px 30px;
+      &-column {
+        width: calc(50% - 15px);
+        max-width: unset;
+        &._links {
+          width: 100%;
+          order: -1;
+        }
+      }
+      &-box {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}
+@mixin footer-768 {
+  .footer {
+    padding: 60px 0 25px;
+    .logo {
+      font-size: 20px;
+    }
+    .bg {
+      font-size: 16px;
+      &__circle {
+        top: 38%;
+        right: -80%;
+      }
+    }
+  }
+}
+@mixin footer-640 {
+  .footer {
+    padding: 60px 0 25px;
+    &__row {
+      gap: 40px;
+      flex-wrap: wrap;
+      &-column {
+        width: 100%;
+        max-width: unset;
+        flex: unset;
+        &._lg {
+          max-width: unset;
+        }
+        &._links {
+          order: 1;
+        }
+      }
+    }
+    .logo {
+      font-size: 18px;
+    }
+    .bg {
+      font-size: 16px;
+      &__circle {
+        top: 38%;
+        right: -80%;
+      }
+    }
+    .bg {
+      font-size: 14px;
+      &__circle {
+        right: -100%;
+      }
+    }
+  }
+}
+@mixin footer-580 {
+  .footer {
+    &__inner {
+      gap: 50px;
+    }
+    .bg {
+      font-size: 12px;
+      &__circle {
+        right: -110%;
+      }
+    }
+  }
+}
+@mixin footer-460 {
+  .footer {
+    padding-bottom: 40px;
+    .bg {
+      font-size: 10px;
+    }
+  }
+}
+@mixin footer-390 {
+  .footer {
+    &__row {
+      &-column {
+        gap: 20px;
+      }
+    }
+    .bg {
+      &__circle {
+        right: -120%;
+      }
+    }
+  }
+}
