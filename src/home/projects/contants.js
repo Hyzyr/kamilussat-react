@@ -9,7 +9,7 @@ export const ProjectDetails = [
     tools: ['react', 'github', 'html', 'css'],
   },
   {
-    projectImage: 'images/intro/intro.png',
+    projectImage: 'images/testimonials/image-2.png',
     projectTitle: 'ecommerce',
     projectDesc:
       'Incredible job. Masud is a gifted designer that created a beautiful work of art for my website. He needed very little direction and got to work right way. I highly recommend him.',
@@ -27,7 +27,7 @@ export const ProjectDetails = [
     tools: ['react', 'github', 'html', 'css'],
   },
   {
-    projectImage: 'images/intro/intro.png',
+    projectImage: 'images/testimonials/image-2.png',
     projectTitle: 'ecommerce',
     projectDesc:
       'Incredible job. Masud is a gifted designer that created a beautiful work of art for my website. He needed very little direction and got to work right way. I highly recommend him.',

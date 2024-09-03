@@ -67,6 +67,7 @@ function Diamond(props) {
 }
 
 export default function App({ isObserved = true }) {
+  if (!isObserved) return <></>;
   return (
     <Canvas
       shadows
@@ -163,7 +164,7 @@ export default function App({ isObserved = true }) {
       <OrbitControls
         makeDefault
         autoRotate
-        autoRotateSpeed={0.3}
+        autoRotateSpeed={1}
         minPolarAngle={0}
         maxPolarAngle={Math.PI / 2}
         enableZoom={false}

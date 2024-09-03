@@ -3,11 +3,11 @@ import Diamond from 'App3d';
 import useVisibleCheck from 'hooks/useVisibleCheck';
 
 const Hero = () => {
-  const heroRef = useRef();
-  const isVisible = useVisibleCheck({ ref: heroRef });
+  const imgRef = useRef();
+  const isVisible = useVisibleCheck({ ref: imgRef });
 
   return (
-    <section className="intro" ref={heroRef}>
+    <section className="intro">
       <div className="autoContainer">
         <div className="intro__inner">
           <div className="intro__inner-content">
@@ -35,7 +35,7 @@ const Hero = () => {
               </span>
             </button>
           </div>
-          <div className="intro__inner-image">
+          <div className="intro__inner-image" ref={imgRef}>
             <div className="ratioImage">
               <Diamond isObserved={isVisible} />
             </div>

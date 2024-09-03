@@ -1135,6 +1135,10 @@
     padding: 20px 0 60px;
     &__inner {
       gap: 0;
+      &-image {
+        margin-top: -30px;
+        margin-bottom: -10px;
+      }
       &-content {
         gap: 20px;
       }
