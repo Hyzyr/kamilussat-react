@@ -23,9 +23,8 @@
   &.sticky {
     position: fixed;
     padding: 15px 0;
-    animation: 0.3s sticky ease-in;
-    transition-duration: 0.5s;
-    background: $white;
+    transition-duration: 0.25s;
+    background: rgba($white, 0.98);
   }
 }
 .nav {
@@ -51,7 +50,7 @@
       line-height: 1;
       transition: 0.3s ease-out;
       &::before {
-        content: "";
+        content: '';
         width: 4px;
         height: 4px;
         border-radius: 50%;
@@ -112,12 +111,12 @@
     transform: translate(-50%, -50%);
   }
   &::before {
-    content: "";
+    content: '';
     top: 0;
     transform: translateX(-50%);
   }
   &::after {
-    content: "";
+    content: '';
     bottom: 0;
     transform: translateX(-50%);
   }

@@ -1,9 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { publicUrl } from 'global';
 
 const Header = () => {
+  const [sticky, setSticky] = useState(false);
+
+  useEffect(() => {
+    let isSticky = sticky;
+    const scrollListener = () => {
+      if (window.pageYOffset > 0 && !isSticky) {
+        setSticky(true);
+        isSticky = true;
+      } else if (window.pageYOffset === 0 && isSticky) {
+        setSticky(false);
+        isSticky = false;
+      }
+    };
+
+    window.addEventListener('scroll', scrollListener);
+    return () => {
+      window.removeEventListener('scroll', scrollListener);
+    };
+  }, []);
+  useEffect(() => {
+    console.log({ sticky });
+  }, [sticky]);
+
   return (
-    <header className="header" id="header">
+    <header className={`header ${sticky ? 'sticky' : ''}`} id="header">
       <div className="autoContainer">
         <div className="header__inner">
           <a href="/" className="logo">

@@ -70,7 +70,7 @@ export default function App({ isObserved = true }) {
   return (
     <Canvas
       shadows
-      camera={{ position: [-5, 0.5, 5], fov: 53 }}
+      camera={{ position: [-4.5, 2, 5], fov: 53 }}
       dpr={window.devicePixelRatio > 1 ? 1.5 : 1}
       style={{ display: !isObserved ? 'none' : 'block' }}
       // gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
@@ -94,9 +94,12 @@ export default function App({ isObserved = true }) {
       <pointLight decay={0} position={[-10, -10, -10]} />
       <>
         <Diamond
-          rotation={[0, 0, 0.715]}
-          scale={1.25}
-          position={[0, -0.09 + 0.5, 0]}
+          // rotation={[0, 0, 0.715]}
+          // scale={1.25}
+          // position={[0, -0.09 + 0.5, 0]}
+          rotation={[0, 0, 0.2]}
+          scale={2.3}
+          position={[0, 1, 0]}
         />
         <Caustics
           color="#00425A"
@@ -123,7 +126,8 @@ export default function App({ isObserved = true }) {
             />
           </mesh>
         </Caustics>
-        <mesh
+
+        {/* <mesh
           castShadow
           // receiveShadow
           position={[1.75, 0, 1]}
@@ -135,7 +139,7 @@ export default function App({ isObserved = true }) {
             roughness={0.7}
             metalness={0.3}
           />
-        </mesh>
+        </mesh>  */}
       </>
       <AccumulativeShadows
         temporal

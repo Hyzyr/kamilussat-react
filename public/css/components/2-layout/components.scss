@@ -803,7 +803,8 @@
     object-fit: contain;
   }
   &:hover {
-    transform: scale(0.95);
+    transform: translateY(-2px);
+    opacity: 0.95;
   }
 }
 .bg {
