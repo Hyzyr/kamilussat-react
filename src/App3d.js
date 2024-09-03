@@ -67,12 +67,12 @@ function Diamond(props) {
 }
 
 export default function App({ isObserved = true }) {
-
   return (
     <Canvas
       shadows
-      camera={{ position: [-5, 0.5, 5], fov: 55 }}
+      camera={{ position: [-5, 0.5, 5], fov: 53 }}
       dpr={window.devicePixelRatio > 1 ? 1.5 : 1}
+      style={{ display: !isObserved ? 'none' : 'block' }}
       // gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
       // style={{ background: 'transparent' }}
       // onCreated={({ gl }) => {
@@ -92,49 +92,51 @@ export default function App({ isObserved = true }) {
         intensity={1}
       />
       <pointLight decay={0} position={[-10, -10, -10]} />
-      {isObserved && (
-        <>
-          <Diamond rotation={[0, 0, 0.715]} position={[0, -0.175 + 0.5, 0]} />
-          <Caustics
-            color="#00425A"
-            position={[0, -0.5, 0]}
-            lightSource={[5, 5, -10]}
-            worldRadius={0.01}
-            ior={1.2}
-            intensity={0.005}>
-            <mesh castShadow receiveShadow position={[-2, 0.5, -1]} scale={0.5}>
-              <sphereGeometry args={[1, 64, 64]} />
-              <MeshTransmissionMaterial
-                resolution={1024}
-                distortion={0.25}
-                color="#FF8F20"
-                thickness={1}
-                // transmission={1}
-                // thickness={0.1}
-                // roughness={0}
-                // clearcoat={1}
-                // clearcoatRoughness={0}
-                // depthWrite={false}
-                anisotropy={1}
-                transparent={true} // Enable transparency
-              />
-            </mesh>
-          </Caustics>
-          <mesh
-            castShadow
-            // receiveShadow
-            position={[1.75, 0, 1]}
-            scale={0.5}>
+      <>
+        <Diamond
+          rotation={[0, 0, 0.715]}
+          scale={1.25}
+          position={[0, -0.09 + 0.5, 0]}
+        />
+        <Caustics
+          color="#00425A"
+          position={[0, -0.5, 0]}
+          lightSource={[5, 5, -10]}
+          worldRadius={0.01}
+          ior={1.2}
+          intensity={0.005}>
+          <mesh castShadow receiveShadow position={[-2, 0.5, -1]} scale={0.5}>
             <sphereGeometry args={[1, 64, 64]} />
-            <meshStandardMaterial
-              color="hotpink"
-              attach="material"
-              roughness={0.7}
-              metalness={0.3}
+            <MeshTransmissionMaterial
+              resolution={1024}
+              distortion={0.25}
+              color="#FF8F20"
+              thickness={1}
+              // transmission={1}
+              // thickness={0.1}
+              // roughness={0}
+              // clearcoat={1}
+              // clearcoatRoughness={0}
+              // depthWrite={false}
+              anisotropy={1}
+              transparent={true} // Enable transparency
             />
           </mesh>
-        </>
-      )}
+        </Caustics>
+        <mesh
+          castShadow
+          // receiveShadow
+          position={[1.75, 0, 1]}
+          scale={0.5}>
+          <sphereGeometry args={[1, 64, 64]} />
+          <meshStandardMaterial
+            color="hotpink"
+            attach="material"
+            roughness={0.7}
+            metalness={0.3}
+          />
+        </mesh>
+      </>
       <AccumulativeShadows
         temporal
         frames={100}

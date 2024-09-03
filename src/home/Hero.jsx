@@ -37,7 +37,7 @@ const Hero = () => {
           </div>
           <div className="intro__inner-image">
             <div className="ratioImage">
-              {/* <Diamond isObserved={isVisible} /> */}
+              <Diamond isObserved={isVisible} />
             </div>
           </div>
         </div>

@@ -56,7 +56,7 @@
 
         &:after {
           color: inherit;
-          content: "";
+          content: '';
           position: absolute;
           display: block;
           top: 50%;
@@ -318,7 +318,7 @@
     height: 100%;
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       display: block;
       top: 0;
@@ -329,7 +329,7 @@
       box-sizing: border-box;
     }
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       display: block;
       top: 40%;
@@ -379,7 +379,7 @@
 
   &--left {
     &::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 50%;
@@ -394,7 +394,7 @@
   }
   &--rtArr {
     &:after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 50%;
@@ -407,7 +407,7 @@
       transform: translate(-50%, -50%);
     }
     &::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 50%;
@@ -420,7 +420,7 @@
   }
   &--right {
     &::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 50%;
@@ -435,7 +435,7 @@
   }
   &--up {
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       display: block;
       top: 50%;
@@ -449,7 +449,7 @@
   }
   &--down {
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       display: block;
       top: 50%;
@@ -464,7 +464,7 @@
   &--cross {
     &:before,
     &:after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 50%;
@@ -484,7 +484,7 @@
     margin-right: 5px;
 
     &:after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 50%;
@@ -505,7 +505,7 @@
     transition: 0.2s ease-in;
     &:before,
     &:after {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 0;
@@ -597,7 +597,7 @@
       &:before,
       &:after {
         position: absolute;
-        content: "";
+        content: '';
         top: 50%;
         left: 0;
         width: 50%;
@@ -735,7 +735,7 @@
       border-radius: 2em;
       // background: $blue-3;
       &::after {
-        content: "";
+        content: '';
         width: calc(100% - 4px);
         height: calc(100% - 4px);
         border: 2px solid $black-10;
@@ -748,7 +748,7 @@
       }
       &::before {
         position: absolute;
-        content: "";
+        content: '';
         height: 1.55em;
         width: 1.55em;
         left: 0.333em;
@@ -883,11 +883,11 @@
   }
   &__bubble {
     position: absolute;
-    filter: blur(45.5px);
-    width: 54.5em;
-    height: 54.5em;
-    background: $secondary;
+    width: 0;
+    height: 0;
+    color: $secondary;
     opacity: 0.06;
+    box-shadow: 0 0 25em 20em currentColor;
   }
   &__image {
     position: absolute;

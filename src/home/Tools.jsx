@@ -14,8 +14,17 @@ const Tools = () => {
       const clientHeight = window.innerHeight;
       const clientWidth = window.innerWidth;
 
+      const toolsWidth = container.current.querySelector(
+        '.tools__row-container'
+      ).clientWidth;
+      const extraScroll =
+        toolsWidth - clientWidth > 0 ? toolsWidth - clientWidth : 0;
+
       const xMin = clientWidth * 0.08;
       const xMax = clientWidth * 0.24;
+      const extraRight =
+        extraScroll !== 0 ? extraScroll + extraScroll * 0.2 : 0;
+
       console.log({
         clientHeight,
         clientWidth,
@@ -24,6 +33,7 @@ const Tools = () => {
         start: `-=${clientHeight} top`,
         end: 'bottom 20%',
       });
+
       gsap
         .timeline({
           scrollTrigger: {
@@ -33,10 +43,21 @@ const Tools = () => {
             start: `-=${clientHeight} top`,
             end: 'bottom 10%',
             scrub: true,
+            // markers: true,
           },
         })
-        .fromTo('.tools__row-container._left', { x: -xMax }, { x: xMin }, '0')
-        .fromTo('.tools__row-container._right', { x: xMax }, { x: -xMin }, '0');
+        .fromTo(
+          '.tools__row-container._left',
+          { x: -(xMax + extraScroll) },
+          { x: xMin },
+          '0'
+        )
+        .fromTo(
+          '.tools__row-container._right',
+          { x: xMax },
+          { x: -(xMin + extraRight) },
+          '0'
+        );
     },
     { scope: container }
   );
