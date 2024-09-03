@@ -2,26 +2,26 @@ import React from 'react';
 
 const Newsletter = () => {
   return (
-    <section class="join">
-      <div class="autoContainer">
-        <div class="join__inner">
-          <div class="join__content">
-            <div class="join__content-container">
-              <h3 class="text--title _sm">Stay Updated</h3>
+    <section className="join">
+      <div className="autoContainer">
+        <div className="join__inner">
+          <div className="join__content">
+            <div className="join__content-container">
+              <h3 className="text--title _sm">Stay Updated</h3>
               <p>
                 Join our newsletter for the latest updates, insights, and
                 exclusive content. We promise to keep our emails informative and
                 spam-free
               </p>
-              <div class="input">
+              <div className="input">
                 <input type="text" placeholder="your email" />
               </div>
-              <button class="button button--secondary">
-                <span class="text--title">SUBMIT</span>
+              <button className="button button--secondary">
+                <span className="text--title">SUBMIT</span>
               </button>
             </div>
-            <button class="button button--arrow">
-              <span class="ico ico--stroke">
+            <button className="button button--arrow">
+              <span className="ico ico--stroke">
                 <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
                   <path
                     d="M2 2H24M24 2V24M24 2L2 24"
@@ -30,7 +30,7 @@ const Newsletter = () => {
                   />
                 </svg>
               </span>
-              <div class="button__bg">
+              <div className="button__bg">
                 <svg width="67" height="75" viewBox="0 0 67 75" fill="none">
                   <path
                     d="M6 0H67V68H61H15C10.0294 68 6 63.9706 6 59V6C6 3.65685 6 2.34315 6 0Z"
@@ -48,8 +48,8 @@ const Newsletter = () => {
                 </svg>
               </div>
             </button>
-            <div class="bg">
-              <div class="bg__circle">
+            <div className="bg">
+              <div className="bg__circle">
                 <span></span>
                 <span></span>
                 <span></span>

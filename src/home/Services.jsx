@@ -2,18 +2,18 @@ import React from 'react';
 
 const Services = () => {
   return (
-    <section class="services">
-      <div class="autoContainer">
-        <div class="services__inner">
-          <p class="services__inner-text">
+    <section className="services">
+      <div className="autoContainer">
+        <div className="services__inner">
+          <p className="services__inner-text">
             Explore our comprehensive range of services designed to transform
             your digital presence. From cutting-edge web development to
             innovative app creation.
           </p>
-          <div class="services__container">
-            <div class="services__container-row">
-              <div class="services__item _lg">
-                <h3 class="text--title">
+          <div className="services__container">
+            <div className="services__container-row">
+              <div className="services__item _lg">
+                <h3 className="text--title">
                   Our <br />
                   Digital <br />
                   Solutions
@@ -24,9 +24,9 @@ const Services = () => {
                 </p>
                 <ServiceButton />
               </div>
-              <div class="services__container-content">
-                <div class="services__item">
-                  <h5 class="text--title _sm">
+              <div className="services__container-content">
+                <div className="services__item">
+                  <h5 className="text--title _sm">
                     <span>Front-End</span>
                     <br />
                     <span>Development</span>
@@ -38,8 +38,8 @@ const Services = () => {
                   </p>
                   <ServiceButton />
                 </div>
-                <div class="services__item">
-                  <h5 class="text--title _sm">
+                <div className="services__item">
+                  <h5 className="text--title _sm">
                     <span>Back-End</span>
                     <br />
                     <span>Development</span>
@@ -51,8 +51,8 @@ const Services = () => {
                   </p>
                   <ServiceButton />
                 </div>
-                <div class="services__item">
-                  <h5 class="text--title _sm">
+                <div className="services__item">
+                  <h5 className="text--title _sm">
                     <span>Configuration</span>
                     <br />
                     <span>management</span>
@@ -64,8 +64,8 @@ const Services = () => {
                   </p>
                   <ServiceButton />
                 </div>
-                <div class="services__item">
-                  <h5 class="text--title _sm">
+                <div className="services__item">
+                  <h5 className="text--title _sm">
                     <span>Database</span>
                   </h5>
                   <p>
@@ -77,9 +77,9 @@ const Services = () => {
                 </div>
               </div>
             </div>
-            <div class="services__container-row _sm">
-              <div class="services__item">
-                <h5 class="text--title _sm">
+            <div className="services__container-row _sm">
+              <div className="services__item">
+                <h5 className="text--title _sm">
                   <span>Containers &</span>
                   <br />
                   <span>Orchestration</span>
@@ -91,8 +91,8 @@ const Services = () => {
                 </p>
                 <ServiceButton />
               </div>
-              <div class="services__item">
-                <h5 class="text--title _sm">
+              <div className="services__item">
+                <h5 className="text--title _sm">
                   <span>CI/CD</span>
                 </h5>
                 <p>
@@ -102,8 +102,8 @@ const Services = () => {
                 </p>
                 <ServiceButton />
               </div>
-              <div class="services__item">
-                <h5 class="text--title _sm">
+              <div className="services__item">
+                <h5 className="text--title _sm">
                   <span>Services</span>
                 </h5>
                 <p>
@@ -123,13 +123,13 @@ const Services = () => {
 
 const ServiceButton = () => {
   return (
-    <button class="button button--arrow">
-      <span class="ico ico--stroke">
+    <button className="button button--arrow">
+      <span className="ico ico--stroke">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
           <path d="M2 2H24M24 2V24M24 2L2 24" stroke="white" stroke-width="3" />
         </svg>
       </span>
-      <span class="button__bg">
+      <span className="button__bg">
         <svg width="67" height="75" viewBox="0 0 67 75" fill="none">
           <path
             d="M6 0H67V68H61H15C10.0294 68 6 63.9706 6 59V6C6 3.65685 6 2.34315 6 0Z"

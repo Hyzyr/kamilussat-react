@@ -3,11 +3,11 @@ import React from 'react';
 
 const Tools = () => {
   return (
-    <section class="tools">
-      <div class="autoContainer">
-        <div class="tools__inner">
-          <div class="tools__row">
-            <div class="tools__row-container">
+    <section className="tools">
+      <div className="autoContainer">
+        <div className="tools__inner">
+          <div className="tools__row">
+            <div className="tools__row-container">
               <ToolItem src="images/tools/tool-1.png" alt="jet brains" />
               <ToolItem src="images/tools/tool-2.png" alt="angular" />
               <ToolItem src="images/tools/tool-3.png" alt="dj" />
@@ -18,9 +18,9 @@ const Tools = () => {
               <ToolItem src="images/tools/tool-7.png" alt="docker" />
               <ToolItem src="images/tools/tool-8.png" alt="rest" />
             </div>
-            <div class="tools__row-container _right">
+            <div className="tools__row-container _right">
               <ToolItem
-                addClass="_left"
+                addclassName="_left"
                 src="images/tools/tool-9.png"
                 alt="tool-9"
               />
@@ -36,8 +36,8 @@ const Tools = () => {
           </div>
         </div>
       </div>
-      <div class="bg">
-        <div class="bg__bubble"></div>
+      <div className="bg">
+        <div className="bg__bubble"></div>
       </div>
     </section>
   );

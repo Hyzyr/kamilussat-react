@@ -1,12 +1,13 @@
 import { publicUrl } from 'global';
 import React from 'react';
+import Diamond from 'App3d';
 
 const Hero = () => {
   return (
-    <section class="intro">
-      <div class="autoContainer">
-        <div class="intro__inner">
-          <div class="intro__inner-content">
+    <section className="intro">
+      <div className="autoContainer">
+        <div className="intro__inner">
+          <div className="intro__inner-content">
             <h2>
               <span>Infinite</span>
               <br />
@@ -18,9 +19,9 @@ const Hero = () => {
               solutions tailored to elevate your business and drive impactful
               results.
             </p>
-            <button class="button button--primary">
-              <span class="text--title">CONTACT uS</span>
-              <span class="ico ico--stroke">
+            <button className="button button--primary">
+              <span className="text--title">CONTACT uS</span>
+              <span className="ico ico--stroke">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                   <path
                     d="M2 2H20M20 2V20M20 2L2 20"
@@ -31,13 +32,15 @@ const Hero = () => {
               </span>
             </button>
           </div>
-          <div class="intro__inner-image">
-            <img src={publicUrl + 'images/intro/intro.png'} alt="intro" />
+          <div className="intro__inner-image">
+         <div className="ratioImage">
+             <Diamond />
+         </div>
           </div>
         </div>
       </div>
-      <div class="bg">
-        <div class="bg__circle">
+      <div className="bg">
+        <div className="bg__circle">
           <span></span>
           <span></span>
           <span></span>
@@ -45,7 +48,7 @@ const Hero = () => {
           <span></span>
           <span></span>
         </div>
-        <div class="bg__bubble"></div>
+        <div className="bg__bubble"></div>
       </div>
     </section>
   );

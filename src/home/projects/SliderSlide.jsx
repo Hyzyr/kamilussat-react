@@ -3,11 +3,9 @@ import { publicUrl } from 'global';
 
 const ImageSlide = ({ projectTitle, projectImage }) => {
   return (
-    <div class="swiper-slide">
-      <div class="testimonials__group-image">
-        <div class="ratioImage">
-          <img src={publicUrl + projectImage} alt={projectTitle} />
-        </div>
+    <div className="testimonials__group-image">
+      <div className="ratioImage">
+        <img src={publicUrl + projectImage} alt={projectTitle} />
       </div>
     </div>
   );
@@ -20,39 +18,37 @@ const InfoSlide = ({
   tools = [],
 }) => {
   return (
-    <div class="swiper-slide">
-      <div class="testimonials__item">
-        <div class="testimonials__item-box">
-          <div class="testimonials__item-ico">
-            <img src={publicUrl + orgImage} alt={orgName} />
-          </div>
-          <h6 class="text--title _lg">{projectTitle}</h6>
+    <div className="testimonials__item">
+      <div className="testimonials__item-box">
+        <div className="testimonials__item-ico">
+          <img src={publicUrl + orgImage} alt={orgName} />
         </div>
-        <div class="testimonials__item-info">
-          <p>{projectDesc}</p>
-          <button class="button button--text">
-            <span>- read more -</span>
-          </button>
+        <h6 className="text--title _lg">{projectTitle}</h6>
+      </div>
+      <div className="testimonials__item-info">
+        <p>{projectDesc}</p>
+        <button className="button button--text">
+          <span>- read more -</span>
+        </button>
+      </div>
+      <div className="testimonials__item-group">
+        <div className="testimonials__item-tools">
+          {tools.map((tool) => (
+            <ToolItem name={tool} />
+          ))}
         </div>
-        <div class="testimonials__item-group">
-          <div class="testimonials__item-tools">
-            {tools.map((tool) => (
-              <ToolItem name={tool} />
-            ))}
-          </div>
-          <button class="button button--border">
-            <span class="text--title">Go to webste</span>
-            <span class="ico ico--stroke">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-                <path
-                  d="M2 2H20M20 2V20M20 2L2 20"
-                  stroke="currentCollor"
-                  stroke-width="3"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
+        <button className="button button--border">
+          <span className="text--title">Go to webste</span>
+          <span className="ico ico--stroke">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path
+                d="M2 2H20M20 2V20M20 2L2 20"
+                stroke="currentCollor"
+                stroke-width="3"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
   );
@@ -74,7 +70,7 @@ const ToolItem = ({ name = 'react' }) => {
   }, [name]);
 
   return (
-    <div class="testimonials__item-image">
+    <div className="testimonials__item-image">
       <img src={toolImage} alt={name} />
     </div>
   );

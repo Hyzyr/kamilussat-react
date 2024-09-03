@@ -3,12 +3,12 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer class="footer">
-      <div class="autoContainer">
-        <div class="footer__inner">
-          <div class="footer__row">
-            <div class="footer__row-column _lg">
-              <div class="logo">
+    <footer className="footer">
+      <div className="autoContainer">
+        <div className="footer__inner">
+          <div className="footer__row">
+            <div className="footer__row-column _lg">
+              <div className="logo">
                 <img src={publicUrl + 'images/logo.png'} alt="logo" />
               </div>
               <p>
@@ -16,9 +16,9 @@ const Footer = () => {
                 services. Our expert team is dedicated to achieving outstanding
                 results. Connect with us to elevate your business.
               </p>
-              <div class="footer__row-group">
-                <div class="footer__row-button">
-                  <span class="ico">
+              <div className="footer__row-group">
+                <div className="footer__row-button">
+                  <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <path
                         d="M22.0935 0H2.90653C2.13567 0 1.39638 0.306222 0.851304 0.851301C0.306226 1.39638 0 2.13566 0 2.90652V22.0935C0 22.8643 0.306226 23.6036 0.851304 24.1487C1.39638 24.6938 2.13567 25 2.90653 25H22.0935C22.8643 25 23.6036 24.6938 24.1487 24.1487C24.6938 23.6036 25 22.8643 25 22.0935V2.90835C25.0002 2.52651 24.9252 2.14836 24.7793 1.79551C24.6333 1.44266 24.4193 1.12204 24.1493 0.851949C23.8794 0.581859 23.5589 0.367603 23.2062 0.221423C22.8534 0.0752417 22.4753 -7.56467e-08 22.0935 0ZM23.837 22.0935C23.8367 22.5559 23.6529 22.9992 23.326 23.3262C22.9991 23.6532 22.5559 23.8372 22.0935 23.8376H2.90653C2.44409 23.8372 2.00074 23.6532 1.67375 23.3263C1.34677 22.9993 1.16285 22.5559 1.16237 22.0935V2.90835C1.16285 2.44592 1.34677 2.00257 1.67375 1.67558C2.00074 1.34859 2.44409 1.16468 2.90653 1.1642H22.0935C22.5559 1.16468 22.9991 1.34861 23.326 1.67562C23.6529 2.00263 23.8367 2.44598 23.837 2.90835V22.0935Z"
@@ -30,10 +30,10 @@ const Footer = () => {
                       />
                     </svg>
                   </span>
-                  <span class="text">Ashgabat, Turkmenistan</span>
+                  <span className="text">Ashgabat, Turkmenistan</span>
                 </div>
-                <div class="footer__row-button">
-                  <span class="ico">
+                <div className="footer__row-button">
+                  <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <path
                         d="M22.0935 0H2.90653C2.13567 0 1.39638 0.306222 0.851304 0.851301C0.306226 1.39638 0 2.13566 0 2.90652V22.0935C0 22.8643 0.306226 23.6036 0.851304 24.1487C1.39638 24.6938 2.13567 25 2.90653 25H22.0935C22.8643 25 23.6036 24.6938 24.1487 24.1487C24.6938 23.6036 25 22.8643 25 22.0935V2.90835C25.0002 2.52651 24.9252 2.14836 24.7793 1.79551C24.6333 1.44266 24.4193 1.12204 24.1493 0.851949C23.8794 0.581859 23.5589 0.367603 23.2062 0.221423C22.8534 0.0752417 22.4753 -7.56467e-08 22.0935 0ZM23.837 22.0935C23.8367 22.5559 23.6529 22.9992 23.326 23.3262C22.9991 23.6532 22.5559 23.8372 22.0935 23.8376H2.90653C2.44409 23.8372 2.00074 23.6532 1.67375 23.3263C1.34677 22.9993 1.16285 22.5559 1.16237 22.0935V2.90835C1.16285 2.44592 1.34677 2.00257 1.67375 1.67558C2.00074 1.34859 2.44409 1.16468 2.90653 1.1642H22.0935C22.5559 1.16468 22.9991 1.34861 23.326 1.67562C23.6529 2.00263 23.8367 2.44598 23.837 2.90835V22.0935Z"
@@ -45,10 +45,10 @@ const Footer = () => {
                       />
                     </svg>
                   </span>
-                  <span class="text">+99371000001</span>
+                  <span className="text">+99371000001</span>
                 </div>
-                <div class="footer__row-button">
-                  <span class="ico">
+                <div className="footer__row-button">
+                  <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <path
                         d="M22.0935 0H2.90653C2.13567 0 1.39638 0.306222 0.851304 0.851301C0.306226 1.39638 0 2.13566 0 2.90652V22.0935C0 22.8643 0.306226 23.6036 0.851304 24.1487C1.39638 24.6938 2.13567 25 2.90653 25H22.0935C22.8643 25 23.6036 24.6938 24.1487 24.1487C24.6938 23.6036 25 22.8643 25 22.0935V2.90835C25.0002 2.52651 24.9252 2.14836 24.7793 1.79551C24.6333 1.44266 24.4193 1.12204 24.1493 0.851949C23.8794 0.581859 23.5589 0.367603 23.2062 0.221423C22.8534 0.0752417 22.4753 -7.56467e-08 22.0935 0ZM23.837 22.0935C23.8367 22.5559 23.6529 22.9992 23.326 23.3262C22.9991 23.6532 22.5559 23.8372 22.0935 23.8376H2.90653C2.44409 23.8372 2.00074 23.6532 1.67375 23.3263C1.34677 22.9993 1.16285 22.5559 1.16237 22.0935V2.90835C1.16285 2.44592 1.34677 2.00257 1.67375 1.67558C2.00074 1.34859 2.44409 1.16468 2.90653 1.1642H22.0935C22.5559 1.16468 22.9991 1.34861 23.326 1.67562C23.6529 2.00263 23.8367 2.44598 23.837 2.90835V22.0935Z"
@@ -62,42 +62,42 @@ const Footer = () => {
                       />
                     </svg>
                   </span>
-                  <span class="text">+99371000001</span>
+                  <span className="text">+99371000001</span>
                 </div>
               </div>
             </div>
-            <div class="footer__row-column _links">
-              <h6 class="text--title _lg">Quick links</h6>
-              <div class="footer__row-box">
-                <a href="#" class="footer__row-link">
+            <div className="footer__row-column _links">
+              <h6 className="text--title _lg">Quick links</h6>
+              <div className="footer__row-box">
+                <a href="#" className="footer__row-link">
                   Services
                 </a>
-                <a href="#" class="footer__row-link">
+                <a href="#" className="footer__row-link">
                   Testimonials
                 </a>
-                <a href="#" class="footer__row-link">
+                <a href="#" className="footer__row-link">
                   Projects
                 </a>
-                <a href="#" class="footer__row-link">
+                <a href="#" className="footer__row-link">
                   Team
                 </a>
-                <a href="#" class="footer__row-link">
+                <a href="#" className="footer__row-link">
                   Home
                 </a>
               </div>
             </div>
-            <div class="footer__row-column">
-              <h6 class="text--title _lg">Contact Us</h6>
-              <div class="footer__row-contact">
-                <div class="input input--secondary">
+            <div className="footer__row-column">
+              <h6 className="text--title _lg">Contact Us</h6>
+              <div className="footer__row-contact">
+                <div className="input input--secondary">
                   <input type="text" placeholder="your email" />
                 </div>
-                <div class="input input--secondary">
+                <div className="input input--secondary">
                   <textarea placeholder="type here..."></textarea>
                 </div>
-                <button class="button button--primary">
-                  <span class="text--title">Send</span>
-                  <span class="ico ico--stroke">
+                <button className="button button--primary">
+                  <span className="text--title">Send</span>
+                  <span className="ico ico--stroke">
                     <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                       <path
                         d="M2 2H20M20 2V20M20 2L2 20"
@@ -110,11 +110,11 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <p class="footer__copy">© 2023 Kamil Ussat. All rights reserved</p>
+          <p className="footer__copy">© 2023 Kamil Ussat. All rights reserved</p>
         </div>
       </div>
-      <div class="bg">
-        <div class="bg__circle">
+      <div className="bg">
+        <div className="bg__circle">
           <span></span>
           <span></span>
           <span></span>

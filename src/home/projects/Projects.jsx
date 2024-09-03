@@ -1,15 +1,33 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { publicUrl } from 'global';
 import { ProjectDetails } from './contants';
 import SliderNav from './SliderNav';
 import { ImageSlide, InfoSlide } from './SliderSlide';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { EffectFade, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+// import 'swiper/css/pagination.css'; // Pagination module
 
 const Projects = () => {
+  const [swiperInfoController, setSwiperInfoController] = useState(null);
+  const [swiperImageController, setSwiperImageController] = useState(null);
+
+  const dots = React.useRef(null);
+  const onInfoSlideChange = ({ activeIndex }) => {
+    if (swiperImageController) swiperImageController.slideTo(activeIndex);
+  };
+  const onImageSlideChange = ({ activeIndex }) => {
+    if (swiperInfoController) swiperInfoController.slideTo(activeIndex);
+  };
+
   return (
-    <section class="testimonials">
-      <div class="autoContainer">
-        <div class="testimonials__inner">
-          <div class="testimonials__inner-box">
+    <section className="testimonials">
+      <div className="autoContainer">
+        <div className="testimonials__inner">
+          <div className="testimonials__inner-box">
             <h2>Showcase of Excellence</h2>
             <p>
               Explore our diverse portfolio of successfully completed projects
@@ -18,49 +36,74 @@ const Projects = () => {
               dedication to quality and innovation.
             </p>
           </div>
-          <div class="testimonials__row">
-            <div class="testimonials__group">
-              <div
-                class="testimonials__group-slider swiper"
-                data-swiper="testimonialsImages">
-                <div class="swiper-wrapper">
-                  {ProjectDetails.map(({ projectImage, projectTitle }) => (
+          <div className="testimonials__row">
+            <div className="testimonials__group">
+              <Swiper
+                className="testimonials__group-slider"
+                slidesPerView={1}
+                spaceBetween={15}
+                // allowTouchMove={false}
+                modules={[EffectFade]}
+                effect="fade"
+                fadeEffect={{ crossFade: true }}
+                onSlideChange={onImageSlideChange}>
+                <InitController
+                  init={(controller) => setSwiperImageController(controller)}
+                />
+                {ProjectDetails.map(({ projectImage, projectTitle }) => (
+                  <SwiperSlide>
                     <ImageSlide
                       projectImage={projectImage}
                       projectTitle={projectTitle}
                     />
-                  ))}
-                </div>
-              </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
               <BannerBg />
             </div>
-            <div class="testimonials__slider" data-swiper-parent="">
-              <div class="testimonials__slider-dots swiper-dots"></div>
+            <div className="testimonials__slider" data-swiper-parent="">
               <div
-                class="testimonials__slider-container swiper"
-                data-swiper="testimonials">
-                <div class="swiper-wrapper">
-                  {ProjectDetails.map((data) => (
+                className="testimonials__slider-dots swiper-dots"
+                ref={dots}></div>
+              <Swiper
+                className="testimonials__slider-container"
+                onSlideChange={onInfoSlideChange}
+                modules={[Pagination]}
+                pagination={{ el: dots.current, clickable: true }}>
+                <InitController
+                  init={(controller) => setSwiperInfoController(controller)}
+                />
+                {ProjectDetails.map((data) => (
+                  <SwiperSlide>
                     <InfoSlide {...data} />
-                  ))}
-                </div>
-              </div>
-              <SliderNav />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+              <SliderNav swiperController={swiperInfoController} />
             </div>
           </div>
         </div>
       </div>
-      <div class="bg">
-        <div class="bg__bubble _left"></div>
-        <div class="bg__bubble _right"></div>
+      <div className="bg">
+        <div className="bg__bubble _left"></div>
+        <div className="bg__bubble _right"></div>
       </div>
     </section>
   );
 };
+
+const InitController = ({ init }) => {
+  const controller = useSwiper();
+  useEffect(() => {
+    if (controller) init(controller);
+  }, [controller]);
+
+  return null;
+};
 const BannerBg = () => {
   return (
-    <div class="bg">
-      <div class="bg__image">
+    <div className="bg">
+      <div className="bg__image">
         <img src={publicUrl + 'images/testimonials/circle.png'} alt="shape" />
       </div>
     </div>

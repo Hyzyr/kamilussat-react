@@ -5,10 +5,10 @@ import { facebookSvg, instaSvg, linkedinSvg } from './SVG';
 
 const Team = () => {
   return (
-    <section class="team">
-      <div class="autoContainer">
-        <div class="team__inner">
-          <div class="team__inner-box">
+    <section className="team">
+      <div className="autoContainer">
+        <div className="team__inner">
+          <div className="team__inner-box">
             <h3>Meet Our Experts</h3>
             <p>
               Get to know the talented professionals behind our successful
@@ -16,7 +16,7 @@ const Team = () => {
               drive innovation and deliver exceptional results.
             </p>
           </div>
-          <div class="team__row">
+          <div className="team__row">
             {teamMates.map((data) => (
               <TeamItem {...data} />
             ))}
@@ -28,25 +28,25 @@ const Team = () => {
 };
 const TeamItem = ({ name, speciality, image, socialLinks }) => {
   return (
-    <div class="team__item">
-      <div class="team__item-image">
-        <div class="ratioImage">
+    <div className="team__item">
+      <div className="team__item-image">
+        <div className="ratioImage">
           <img src={publicUrl + image} alt={name} />
         </div>
-        <div class="team__item-group">
-          <button class="button button--ico">
-            <span class="ico">{facebookSvg}</span>
+        <div className="team__item-group">
+          <button className="button button--ico">
+            <span className="ico">{facebookSvg}</span>
           </button>
-          <button class="button button--ico">
-            <span class="ico">{instaSvg}</span>
+          <button className="button button--ico">
+            <span className="ico">{instaSvg}</span>
           </button>
-          <button class="button button--ico">
-            <span class="ico">{linkedinSvg}</span>
+          <button className="button button--ico">
+            <span className="ico">{linkedinSvg}</span>
           </button>
         </div>
       </div>
-      <div class="team__item-info">
-        <h5 class="text--title">{speciality}</h5>
+      <div className="team__item-info">
+        <h5 className="text--title">{speciality}</h5>
         <h6>{name}</h6>
       </div>
     </div>
