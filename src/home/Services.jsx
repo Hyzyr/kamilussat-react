@@ -1,8 +1,29 @@
-import React from 'react';
+import { useGSAP } from '@gsap/react';
+import useVisibleCheck from 'hooks/useVisibleCheck';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
 
 const Services = () => {
+  const wrapper = useRef(null);
+  const isVisible = useVisibleCheck({ ref: wrapper });
+
+  useGSAP(
+    () => {
+      if (isVisible)
+        gsap.fromTo(
+          '.services__inner-text , .services__item',
+          { opacity: 0, scale: 0.98 },
+          { opacity: 1, scale: 1, duration: 0.5, delay: 0.25, stagger: 0.12 }
+        );
+    },
+    {
+      scope: wrapper,
+      dependencies: [isVisible],
+    }
+  );
+
   return (
-    <section className="services">
+    <section className="services" ref={wrapper}>
       <div className="autoContainer">
         <div className="services__inner">
           <p className="services__inner-text">
