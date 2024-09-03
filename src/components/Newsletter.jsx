@@ -26,7 +26,7 @@ const Newsletter = () => {
                   <path
                     d="M2 2H24M24 2V24M24 2L2 24"
                     stroke="white"
-                    stroke-width="3"
+                    strokeWidth="3"
                   />
                 </svg>
               </span>

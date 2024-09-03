@@ -35,7 +35,7 @@ const Header = () => {
                     <path
                       d="M2 2H20M20 2V20M20 2L2 20"
                       stroke="currentCollor"
-                      stroke-width="3"
+                      strokeWidth="3"
                     />
                   </svg>
                 </span>
@@ -50,7 +50,7 @@ const Header = () => {
                   <path
                     d="M2 2H20M20 2V20M20 2L2 20"
                     stroke="currentCollor"
-                    stroke-width="3"
+                    strokeWidth="3"
                   />
                 </svg>
               </span>

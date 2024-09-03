@@ -17,8 +17,8 @@ const Team = () => {
             </p>
           </div>
           <div className="team__row">
-            {teamMates.map((data) => (
-              <TeamItem {...data} />
+            {teamMates.map((data, index) => (
+              <TeamItem {...data} key={index} />
             ))}
           </div>
         </div>

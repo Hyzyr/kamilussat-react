@@ -11,7 +11,7 @@ const SliderNav = ({ swiperController }) => {
             <path
               d="M12.4439 10.6718L4.00007 2.22796L21.0121 2.22792L29.4559 2.22792M20.8878 2.22796L12.4439 2.22796"
               stroke="currentCollor"
-              stroke-width="3"
+              strokeWidth="3"
             />
           </svg>
         </span>
@@ -24,7 +24,7 @@ const SliderNav = ({ swiperController }) => {
             <path
               d="M17.468 10.6718L25.9118 2.22796L8.89975 2.22792H0.455916M9.02409 2.22796L17.4679 2.22796"
               stroke="currentCollor"
-              stroke-width="3"
+              strokeWidth="3"
             />
           </svg>
         </span>

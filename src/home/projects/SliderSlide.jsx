@@ -33,8 +33,8 @@ const InfoSlide = ({
       </div>
       <div className="testimonials__item-group">
         <div className="testimonials__item-tools">
-          {tools.map((tool) => (
-            <ToolItem name={tool} />
+          {tools.map((tool, index) => (
+            <ToolItem name={tool} key={index} />
           ))}
         </div>
         <button className="button button--border">
@@ -44,7 +44,7 @@ const InfoSlide = ({
               <path
                 d="M2 2H20M20 2V20M20 2L2 20"
                 stroke="currentCollor"
-                stroke-width="3"
+                strokeWidth="3"
               />
             </svg>
           </span>

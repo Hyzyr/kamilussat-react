@@ -126,7 +126,7 @@ const ServiceButton = () => {
     <button className="button button--arrow">
       <span className="ico ico--stroke">
         <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
-          <path d="M2 2H24M24 2V24M24 2L2 24" stroke="white" stroke-width="3" />
+          <path d="M2 2H24M24 2V24M24 2L2 24" stroke="white" strokeWidth="3" />
         </svg>
       </span>
       <span className="button__bg">

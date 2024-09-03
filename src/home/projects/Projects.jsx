@@ -50,8 +50,8 @@ const Projects = () => {
                 <InitController
                   init={(controller) => setSwiperImageController(controller)}
                 />
-                {ProjectDetails.map(({ projectImage, projectTitle }) => (
-                  <SwiperSlide>
+                {ProjectDetails.map(({ projectImage, projectTitle }, index) => (
+                  <SwiperSlide key={index}>
                     <ImageSlide
                       projectImage={projectImage}
                       projectTitle={projectTitle}
@@ -73,8 +73,8 @@ const Projects = () => {
                 <InitController
                   init={(controller) => setSwiperInfoController(controller)}
                 />
-                {ProjectDetails.map((data) => (
-                  <SwiperSlide>
+                {ProjectDetails.map((data, index) => (
+                  <SwiperSlide key={index}>
                     <InfoSlide {...data} />
                   </SwiperSlide>
                 ))}
