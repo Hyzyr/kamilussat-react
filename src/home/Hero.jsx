@@ -1,10 +1,35 @@
 import { publicUrl } from 'global';
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Diamond from 'App3d';
 
 const Hero = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  const heroRef = useRef();
+  useEffect(() => {
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        setIsVisible(entry.isIntersecting);
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    });
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) observer.unobserve(heroRef.current);
+    };
+  }, []);
+
   return (
-    <section className="intro">
+    <section className="intro" ref={heroRef}>
       <div className="autoContainer">
         <div className="intro__inner">
           <div className="intro__inner-content">
@@ -33,9 +58,9 @@ const Hero = () => {
             </button>
           </div>
           <div className="intro__inner-image">
-         <div className="ratioImage">
-             <Diamond />
-         </div>
+            <div className="ratioImage">
+              <Diamond isObserved={isVisible} />
+            </div>
           </div>
         </div>
       </div>

@@ -66,11 +66,14 @@ function Diamond(props) {
   );
 }
 
-export default function App() {
+export default function App({ isObserved = true }) {
+  if (!isObserved) return <></>;
+
   return (
     <Canvas
       shadows
       camera={{ position: [-5, 0.5, 5], fov: 55 }}
+      dpr={window.devicePixelRatio > 1 ? 1.5 : 1}
       // gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
       // style={{ background: 'transparent' }}
       // onCreated={({ gl }) => {
@@ -82,7 +85,13 @@ export default function App() {
       <color attach="background" args={['#00000000']} />
       <ambientLight intensity={0.5} />
       {/* <ambientLight intensity={0.5 * Math.PI} /> */}
-      <spotLight decay={0} position={[5, 5, -10]} angle={0.15} penumbra={1} />
+      <spotLight
+        decay={0}
+        position={[5, 5, -10]}
+        angle={0.15}
+        penumbra={1}
+        intensity={1}
+      />
       <pointLight decay={0} position={[-10, -10, -10]} />
       <Diamond rotation={[0, 0, 0.715]} position={[0, -0.175 + 0.5, 0]} />
       <Caustics
@@ -110,9 +119,18 @@ export default function App() {
           />
         </mesh>
       </Caustics>
-      <mesh castShadow receiveShadow position={[1.75, 0.25, 1]} scale={0.75}>
+      <mesh
+        castShadow
+        // receiveShadow
+        position={[1.75, 0, 1]}
+        scale={0.5}>
         <sphereGeometry args={[1, 64, 64]} />
-        <meshStandardMaterial color="hotpink" />
+        <meshStandardMaterial
+          color="hotpink"
+          attach="material"
+          roughness={0.7}
+          metalness={0.3}
+        />
       </mesh>
       <AccumulativeShadows
         temporal
