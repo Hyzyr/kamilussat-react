@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { publicUrl } from 'global';
 
 const Header = () => {
+  const [active, setActive] = useState(false);
   const [sticky, setSticky] = useState(false);
 
   useEffect(() => {
@@ -21,9 +22,17 @@ const Header = () => {
       window.removeEventListener('scroll', scrollListener);
     };
   }, []);
-  useEffect(() => {
-    console.log({ sticky });
-  }, [sticky]);
+  const clickListener = (e) => {
+    if (active && e.target === e.currentTarget) {
+      toggleActive();
+    }
+  };
+
+  const toggleActive = () => {
+    const newState = !active;
+    document.body.classList.toggle('active', newState);
+    setActive(newState);
+  };
 
   return (
     <header className={`header ${sticky ? 'sticky' : ''}`} id="header">
@@ -32,7 +41,9 @@ const Header = () => {
           <a href="/" className="logo">
             <img src={publicUrl + 'images/logo.png'} alt="logo" />
           </a>
-          <div className="nav" id="menu">
+          <div
+            className={`nav ${active ? 'active' : ''}`}
+            onClick={clickListener}>
             <div className="nav__inner">
               <div className="nav__inner-group">
                 <a href="" className="nav__inner-link text--title active">
@@ -66,7 +77,7 @@ const Header = () => {
             </div>
           </div>
           <div className="header__inner-group">
-            <button className="button button--primary _hideMob">
+            <button className={`button button--primary _hideMob`}>
               <span className="text--title">Sign Up</span>
               <span className="ico ico--stroke">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -78,7 +89,10 @@ const Header = () => {
                 </svg>
               </span>
             </button>
-            <button className="burger" id="menuBtn">
+            <button
+              className={`burger ${active ? 'active' : ''}`}
+              id="menuBtn"
+              onClick={toggleActive}>
               <span></span>
             </button>
           </div>

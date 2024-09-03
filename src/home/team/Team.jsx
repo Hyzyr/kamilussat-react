@@ -1,11 +1,37 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { publicUrl } from 'global';
 import { teamMates } from './contants';
 import { facebookSvg, instaSvg, linkedinSvg } from './SVG';
+import useVisibleCheck from 'hooks/useVisibleCheck';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 const Team = () => {
+  const wrapper = useRef(null);
+  const isVisible = useVisibleCheck({ ref: wrapper });
+
+  useGSAP(
+    () => {
+      if (isVisible)
+        gsap.fromTo(
+          '.team__inner-box > h3 , .team__inner-box > p, .team__item',
+          { opacity: 0, scale: 0.98 },
+          { opacity: 1, scale: 1, duration: 0.5, delay: 0.25, stagger: 0.12 }
+        );
+      else
+        gsap.set('.team__inner-box > h3 , .team__inner-box > p, .team__item', {
+          opacity: 0,
+          scale: 0.98,
+        });
+    },
+    {
+      scope: wrapper,
+      dependencies: [isVisible],
+    }
+  );
+
   return (
-    <section className="team">
+    <section className="team" ref={wrapper}>
       <div className="autoContainer">
         <div className="team__inner">
           <div className="team__inner-box">

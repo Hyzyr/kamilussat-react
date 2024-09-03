@@ -15,6 +15,11 @@ const Services = () => {
           { opacity: 0, scale: 0.98 },
           { opacity: 1, scale: 1, duration: 0.5, delay: 0.25, stagger: 0.12 }
         );
+      else
+        gsap.set('.services__inner-text , .services__item', {
+          opacity: 0,
+          scale: 0.98,
+        });
     },
     {
       scope: wrapper,
