@@ -1,13 +1,52 @@
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { publicUrl } from 'global';
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from 'gsap';
+gsap.registerPlugin(useGSAP);
+gsap.registerPlugin(ScrollTrigger);
 
 const Tools = () => {
+  const container = useRef();
+
+  useGSAP(
+    () => {
+      const clientHeight = window.innerHeight;
+      const clientWidth = window.innerWidth;
+
+      const xMin = clientWidth * 0.08;
+      const xMax = clientWidth * 0.24;
+      console.log({
+        clientHeight,
+        clientWidth,
+        xMin,
+        xMax,
+        start: `-=${clientHeight} top`,
+        end: 'bottom 20%',
+      });
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: container.current,
+            pin: false,
+            pinSpacing: false,
+            start: `-=${clientHeight} top`,
+            end: 'bottom 10%',
+            scrub: true,
+          },
+        })
+        .fromTo('.tools__row-container._left', { x: -xMax }, { x: xMin }, '0')
+        .fromTo('.tools__row-container._right', { x: xMax }, { x: -xMin }, '0');
+    },
+    { scope: container }
+  );
+
   return (
-    <section className="tools">
+    <section className="tools" ref={container}>
       <div className="autoContainer">
         <div className="tools__inner">
           <div className="tools__row">
-            <div className="tools__row-container">
+            <div className="tools__row-container _left">
               <ToolItem src="images/tools/tool-1.png" alt="jet brains" />
               <ToolItem src="images/tools/tool-2.png" alt="angular" />
               <ToolItem src="images/tools/tool-3.png" alt="dj" />
@@ -45,7 +84,7 @@ const Tools = () => {
 
 const ToolItem = ({ src, alt, addClass = '' }) => {
   return (
-    <div class={`tools__row-item ${addClass}`}>
+    <div className={`tools__row-item ${addClass}`}>
       <img src={publicUrl + src} alt={alt} />
     </div>
   );
