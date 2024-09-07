@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { Suspense, useRef } from 'react';
 import Diamond from 'App3d';
 import useVisibleCheck from 'hooks/useVisibleCheck';
 
@@ -37,7 +37,9 @@ const Hero = () => {
           </div>
           <div className="intro__inner-image" ref={imgRef}>
             <div className="ratioImage">
-              <Diamond isObserved={isVisible} />
+              <Suspense fallback="loading">
+                <Diamond isObserved={isVisible} />
+              </Suspense>
             </div>
           </div>
         </div>

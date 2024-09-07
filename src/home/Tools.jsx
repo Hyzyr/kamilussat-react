@@ -25,15 +25,6 @@ const Tools = () => {
       const extraRight =
         extraScroll !== 0 ? extraScroll + extraScroll * 0.2 : 0;
 
-      console.log({
-        clientHeight,
-        clientWidth,
-        xMin,
-        xMax,
-        start: `-=${clientHeight} top`,
-        end: 'bottom 20%',
-      });
-
       gsap
         .timeline({
           scrollTrigger: {

@@ -59,6 +59,10 @@ body {
   background: $lightBlue-10;
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
+  // overflow: hidden;
+}
+#root {
+  // overflow: scroll;
 }
 body.active {
   overflow: hidden;

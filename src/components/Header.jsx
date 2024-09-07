@@ -35,7 +35,9 @@ const Header = () => {
   };
 
   return (
-    <header className={`header ${sticky ? 'sticky' : ''}`} id="header">
+    <header
+      className={`header ${sticky ? 'sticky' : ''}  ${active ? 'active' : ''}`}
+      id="header">
       <div className="autoContainer">
         <div className="header__inner">
           <a href="/" className="logo">

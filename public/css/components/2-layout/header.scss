@@ -24,7 +24,12 @@
     position: fixed;
     padding: 15px 0;
     transition-duration: 0.25s;
-    background: rgba($white, 0.98);
+    background: rgba($white, 0.75);
+
+    &:not(.active) {
+      backdrop-filter: blur(2px);
+      box-shadow: 0 3px 10px rgba($black-20, 0.06);
+    }
   }
 }
 .nav {
@@ -143,7 +148,13 @@
     }
   }
 }
-
+@media header-1280 {
+  .header {
+    .logo {
+      font-size: 18px;
+    }
+  }
+}
 @mixin header-1280 {
   .header {
     .logo {
