@@ -4,7 +4,8 @@ import useVisibleCheck from 'hooks/useVisibleCheck';
 
 const Hero = () => {
   const imgRef = useRef();
-  const isVisible = useVisibleCheck({ ref: imgRef });
+  const isVisible = true;
+  // const isVisible = useVisibleCheck({ ref: imgRef });
 
   return (
     <section className="intro">
@@ -45,7 +46,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="bg">
-        <div className="bg__circle">
+        <div className="bg__circle noanimation">
           <span></span>
           <span></span>
           <span></span>

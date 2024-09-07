@@ -32,23 +32,25 @@ function Diamond(props) {
   // });
   const config = {
     bounces: 3,
-    aberrationStrength: 0.01,
+    aberrationStrength: 0,
     ior: 2.75,
-    fresnel: 0.5,
+    fresnel: 0,
     color: 'white',
   };
   return (
     <CubeCamera resolution={256} frames={1} envMap={texture}>
       {(texture) => (
         <Caustics
-          backfaces
+          // backfaces
           color={config.color}
           position={[0, -0.5, 0]}
           lightSource={[5, 5, -10]}
           worldRadius={0.1}
           ior={1.8}
           backfaceIor={1.1}
-          intensity={0.1}>
+          // intensity={0.1}
+
+        >
           <mesh
             castShadow
             ref={ref}
@@ -67,14 +69,14 @@ function Diamond(props) {
 }
 
 export default function App({ isObserved = true }) {
-  
   return (
     <Canvas
       shadows
       camera={{ position: [-4.5, 2, 5], fov: 53 }}
       dpr={window.devicePixelRatio > 1 ? 1.5 : 1}
-      style={{ display: !isObserved ? 'none' : 'block' }}
+      // style={{ display: !isObserved ? 'none' : 'block' }}
       // gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
+      style={{ background: 'rgba(0,0,0,.3)' }}
       // style={{ background: 'transparent' }}
       // onCreated={({ gl }) => {
       //   gl.setClearColor(0x000000, 0);  // Transparent background
@@ -104,26 +106,18 @@ export default function App({ isObserved = true }) {
         />
         <Caustics
           color="#00425A"
-          position={[0, -0.5, 0]}
+          position={[0.35, -0.55, 0]}
           lightSource={[5, 5, -10]}
-          worldRadius={0.01}
-          ior={1.2}
-          intensity={0.005}>
-          <mesh castShadow receiveShadow position={[-2, 0.5, -1]} scale={0.5}>
+          worldRadius={0.01}>
+          <mesh castShadow position={[-2, 0.5, -1]} scale={0.5}>
             <sphereGeometry args={[1, 64, 64]} />
             <MeshTransmissionMaterial
-              resolution={1024}
-              distortion={0.25}
+              resolution={300}
+              distortion={0}
               color="#FF8F20"
+              roughness={0.15}
               thickness={1}
-              // transmission={1}
-              // thickness={0.1}
-              // roughness={0}
-              // clearcoat={1}
-              // clearcoatRoughness={0}
-              // depthWrite={false}
               anisotropy={1}
-              transparent={true} // Enable transparency
             />
           </mesh>
         </Caustics>
@@ -144,23 +138,23 @@ export default function App({ isObserved = true }) {
       </>
       <AccumulativeShadows
         temporal
-        frames={100}
+        frames={50}
         color="lightblue"
-        colorBlend={2}
-        toneMapped={true}
-        alphaTest={0.7}
-        opacity={0.6}
-        scale={6}
+        colorBlend={1}
+        toneMapped={false}
+        // alphaTest={0.7}
+        opacity={0.4}
+        // scale={6}
         position={[0, -0.5, 0]}>
         <RandomizedLight
-          amount={8}
-          radius={10}
-          ambient={0.5}
+          amount={2}
+          radius={6}
+          ambient={1}
           position={[5, 5, -10]}
-          bias={0.001}
+          bias={0}
         />
       </AccumulativeShadows>
-      <Environment files={publicUrl + '3dmodel/neon.hdr'} />
+      {/* <Environment files={publicUrl + '3dmodel/neon.hdr'} /> */}
       <OrbitControls
         makeDefault
         autoRotate

@@ -868,21 +868,31 @@
       &:nth-child(6) {
         animation-delay: 5s;
       }
-      // &:nth-child(2) {
-      //   transform: translate(-50%, -50%) scale(0.88);
-      // }
-      // &:nth-child(3) {
-      //   transform: translate(-50%, -50%) scale(0.76);
-      // }
-      // &:nth-child(4) {
-      //   transform: translate(-50%, -50%) scale(0.64);
-      // }
-      // &:nth-child(5) {
-      //   transform: translate(-50%, -50%) scale(0.52);
-      // }
-      // &:nth-child(6) {
-      //   transform: translate(-50%, -50%) scale(0.4);
-      // }
+    }
+
+    &.noanimation {
+      span {
+        animation: none;
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+
+        &:nth-child(2) {
+          transform: translate(-50%, -50%) scale(0.88);
+        }
+        &:nth-child(3) {
+          transform: translate(-50%, -50%) scale(0.76);
+        }
+        &:nth-child(4) {
+          transform: translate(-50%, -50%) scale(0.64);
+        }
+        &:nth-child(5) {
+          transform: translate(-50%, -50%) scale(0.52);
+        }
+        &:nth-child(6) {
+          transform: translate(-50%, -50%) scale(0.4);
+        }
+      }
     }
   }
   &__bubble {
