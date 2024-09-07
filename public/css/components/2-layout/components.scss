@@ -851,6 +851,7 @@
       animation-name: circle;
       animation-iteration-count: infinite;
       animation-timing-function: linear;
+      animation-fill-mode: backwards;
       animation-duration: 4s;
 
       &:nth-child(2) {
@@ -872,25 +873,24 @@
 
     &.noanimation {
       span {
-        animation: none;
+        animation: unset;
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.12);
 
         &:nth-child(2) {
-          transform: translate(-50%, -50%) scale(0.88);
+          transform: translate(-50%, -50%) scale(1);
         }
         &:nth-child(3) {
-          transform: translate(-50%, -50%) scale(0.76);
+          transform: translate(-50%, -50%) scale(0.88);
         }
         &:nth-child(4) {
-          transform: translate(-50%, -50%) scale(0.64);
+          transform: translate(-50%, -50%) scale(0.76);
         }
         &:nth-child(5) {
-          transform: translate(-50%, -50%) scale(0.52);
+          transform: translate(-50%, -50%) scale(0.64);
         }
         &:nth-child(6) {
-          transform: translate(-50%, -50%) scale(0.4);
+          transform: translate(-50%, -50%) scale(0.52);
         }
       }
     }

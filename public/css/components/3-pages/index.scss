@@ -86,7 +86,7 @@
   }
 }
 .tools {
-  padding: 30px 0 90px;
+  padding: 90px 0;
   position: relative;
   &__row {
     display: flex;
@@ -863,13 +863,14 @@
   .intro {
     padding: 30px 0 80px;
     &__inner {
+      position: relative;
       flex-direction: column;
       gap: 30px;
       &-image {
         order: -1;
         width: 100%;
         max-width: 500px;
-        margin: 0 auto;
+        margin: 0 auto -20% auto;
       }
       &-content {
         width: 100%;
@@ -877,6 +878,7 @@
         margin: 0 auto;
         text-align: center;
         align-items: center;
+        z-index: 1;
       }
     }
     .bg {
@@ -1137,7 +1139,6 @@
       gap: 0;
       &-image {
         margin-top: -30px;
-        margin-bottom: -10px;
       }
       &-content {
         gap: 20px;

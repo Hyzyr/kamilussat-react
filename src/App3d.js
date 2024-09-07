@@ -76,7 +76,6 @@ export default function App({ isObserved = true }) {
       dpr={window.devicePixelRatio > 1 ? 1.5 : 1}
       // style={{ display: !isObserved ? 'none' : 'block' }}
       // gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
-      style={{ background: 'rgba(0,0,0,.3)' }}
       // style={{ background: 'transparent' }}
       // onCreated={({ gl }) => {
       //   gl.setClearColor(0x000000, 0);  // Transparent background
@@ -104,12 +103,12 @@ export default function App({ isObserved = true }) {
           scale={2.3}
           position={[0, 1, 0]}
         />
-        <Caustics
+        {/* <Caustics
           color="#00425A"
           position={[0.35, -0.55, 0]}
           lightSource={[5, 5, -10]}
-          worldRadius={0.01}>
-          <mesh castShadow position={[-2, 0.5, -1]} scale={0.5}>
+          worldRadius={0.01}> */}
+          <mesh castShadow position={[-1.75, 0, -1]} scale={0.5}>
             <sphereGeometry args={[1, 64, 64]} />
             <MeshTransmissionMaterial
               resolution={300}
@@ -120,7 +119,7 @@ export default function App({ isObserved = true }) {
               anisotropy={1}
             />
           </mesh>
-        </Caustics>
+        {/* </Caustics> */}
 
         {/* <mesh
           castShadow
@@ -143,7 +142,7 @@ export default function App({ isObserved = true }) {
         colorBlend={1}
         toneMapped={false}
         // alphaTest={0.7}
-        opacity={0.4}
+        opacity={0.6}
         // scale={6}
         position={[0, -0.5, 0]}>
         <RandomizedLight
@@ -159,10 +158,10 @@ export default function App({ isObserved = true }) {
         makeDefault
         autoRotate
         autoRotateSpeed={1}
-        minPolarAngle={0}
+        minPolarAngle={Math.PI / 3}
         maxPolarAngle={Math.PI / 2}
         enableZoom={false}
-        enabled={isObserved}
+        // enabled={isObserved}
       />
       {/* <EffectComposer>
           <Bloom luminanceThreshold={1} intensity={2} levels={9} mipmapBlur />
