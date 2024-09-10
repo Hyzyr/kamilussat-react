@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
-import { publicUrl } from 'global';
-import { teamMates } from './contants';
-import { facebookSvg, instaSvg, linkedinSvg } from './SVG';
-import useVisibleCheck from 'hooks/useVisibleCheck';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+import React, { useRef } from "react";
+import { publicUrl } from "global";
+import { teamMates } from "./contants";
+import { facebookSvg, instaSvg, linkedinSvg } from "./SVG";
+import useVisibleCheck from "hooks/useVisibleCheck";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Team = () => {
   const wrapper = useRef(null);
@@ -15,13 +15,13 @@ const Team = () => {
     () => {
       if (isVisible && !isAnimated.current) {
         gsap.fromTo(
-          '.team__inner-box > h3 , .team__inner-box > p, .team__item',
+          ".team__inner-box > h3 , .team__inner-box > p, .team__item",
           { opacity: 0, scale: 0.98 },
           { opacity: 1, scale: 1, duration: 0.5, delay: 0.25, stagger: 0.12 }
         );
         isAnimated.current = true;
       } else if (!isAnimated.current)
-        gsap.set('.team__inner-box > h3 , .team__inner-box > p, .team__item', {
+        gsap.set(".team__inner-box > h3 , .team__inner-box > p, .team__item", {
           opacity: 0,
           scale: 0.98,
         });
@@ -33,7 +33,7 @@ const Team = () => {
   );
 
   return (
-    <section className="team" ref={wrapper}>
+    <section className="team" ref={wrapper} data-section id="team">
       <div className="autoContainer">
         <div className="team__inner">
           <div className="team__inner-box">

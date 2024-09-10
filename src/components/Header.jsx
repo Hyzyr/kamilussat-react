@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { publicUrl } from 'global';
+import React, { useEffect, useRef, useState } from "react";
+import { publicUrl } from "global";
 
 const Header = () => {
   const [active, setActive] = useState(false);
@@ -17,9 +17,9 @@ const Header = () => {
       }
     };
 
-    window.addEventListener('scroll', scrollListener);
+    window.addEventListener("scroll", scrollListener);
     return () => {
-      window.removeEventListener('scroll', scrollListener);
+      window.removeEventListener("scroll", scrollListener);
     };
   }, []);
   const clickListener = (e) => {
@@ -28,39 +28,98 @@ const Header = () => {
     }
   };
 
-  const toggleActive = () => {
-    const newState = !active;
-    document.body.classList.toggle('active', newState);
+  const toggleActive = (state) => {
+    const newState = state ?? !active;
+    document.body.classList.toggle("active", newState);
     setActive(newState);
   };
 
+  const [activeSection, setActiveSection] = useState(null);
+  const setActiveSec = (name) => {
+    setActiveSection(name);
+    toggleActive(false);
+  };
+  const linkClassName = (linkName) => {
+    return (
+      "nav__inner-link text--title " +
+      (activeSection === linkName ? "active" : "")
+    );
+  };
+  const observer = useRef(null);
+  const options = {
+    // root: по умолчанию window,
+    // но можно задать любой элемент-контейнер
+    // rootMargin: "0px 0px 0 0px",
+    threshold: 0.1,
+  };
+  useEffect(() => {
+    observer.current = new IntersectionObserver((entries) => {
+      const visibleSection = entries.find(
+        (entry) => entry.isIntersecting
+      )?.target;
+      if (visibleSection) {
+        setActiveSection(visibleSection.id);
+      }
+    }, options);
+
+    const sections = document.querySelectorAll("[data-section]");
+
+    sections.forEach((section) => {
+      observer.current.observe(section);
+    });
+    //Cleanup function to remove observer
+    return () => {
+      sections.forEach((section) => {
+        observer.current.unobserve(section);
+      });
+    };
+  }, []);
+
   return (
     <header
-      className={`header ${sticky ? 'sticky' : ''}  ${active ? 'active' : ''}`}
-      id="header">
+      className={`header ${sticky ? "sticky" : ""}  ${active ? "active" : ""}`}
+      id="header"
+    >
       <div className="autoContainer">
         <div className="header__inner">
           <a href="/" className="logo">
-            <img src={publicUrl + 'images/logo.png'} alt="logo" />
+            <img src={publicUrl + "images/logo.png"} alt="logo" />
           </a>
           <div
-            className={`nav ${active ? 'active' : ''}`}
-            onClick={clickListener}>
+            className={`nav ${active ? "active" : ""}`}
+            onClick={clickListener}
+          >
             <div className="nav__inner">
               <div className="nav__inner-group">
-                <a href="" className="nav__inner-link text--title active">
+                <a
+                  href="#home"
+                  className={linkClassName("home")}
+                  onClick={() => setActiveSec("home")}
+                >
                   Home
                 </a>
-                <a href="" className="nav__inner-link text--title">
+                <a
+                  href="#services"
+                  className={linkClassName("services")}
+                  onClick={() => setActiveSec("services")}
+                >
                   Services
                 </a>
-                <a href="" className="nav__inner-link text--title">
-                  Testimonials
-                </a>
-                <a href="" className="nav__inner-link text--title">
+                <a
+                  href="#projects"
+                  className={linkClassName("projects")}
+                  onClick={() => setActiveSec("projects")}
+                >
                   Projects
                 </a>
-                <a href="" className="nav__inner-link text--title">
+                <a
+                  href="#team"
+                  className={linkClassName("team")}
+                  onClick={() => {
+                    setActiveSection("team");
+                    setActive(false);
+                  }}
+                >
                   Team
                 </a>
               </div>
@@ -92,9 +151,10 @@ const Header = () => {
               </span>
             </button>
             <button
-              className={`burger ${active ? 'active' : ''}`}
+              className={`burger ${active ? "active" : ""}`}
               id="menuBtn"
-              onClick={toggleActive}>
+              onClick={toggleActive}
+            >
               <span></span>
             </button>
           </div>

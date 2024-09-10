@@ -4,6 +4,7 @@
   padding: 98px 0 25px;
   background: $primary-3;
   position: relative;
+  overflow: hidden;
   &__inner {
     display: flex;
     flex-direction: column;

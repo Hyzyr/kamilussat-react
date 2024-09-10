@@ -1,6 +1,6 @@
-import React, { Suspense, useRef } from 'react';
-import Diamond from 'App3d';
-import useVisibleCheck from 'hooks/useVisibleCheck';
+import React, { Suspense, useRef } from "react";
+import Diamond from "App3d";
+import useVisibleCheck from "hooks/useVisibleCheck";
 
 const Hero = () => {
   const imgRef = useRef();
@@ -8,7 +8,7 @@ const Hero = () => {
   // const isVisible = useVisibleCheck({ ref: imgRef });
 
   return (
-    <section className="intro">
+    <section className="intro" data-section id="home">
       <div className="autoContainer">
         <div className="intro__inner">
           <div className="intro__inner-content">

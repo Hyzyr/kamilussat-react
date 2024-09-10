@@ -30,7 +30,7 @@ const Services = () => {
   );
 
   return (
-    <section className="services" ref={wrapper}>
+    <section className="services" ref={wrapper} data-section id='services'>
       <div className="autoContainer">
         <div className="services__inner">
           <p className="services__inner-text">
