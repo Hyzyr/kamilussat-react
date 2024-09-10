@@ -1,13 +1,17 @@
 import React, { useRef } from "react";
-import ToolsRow from "./ToolsRow";
+import ToolsRow, { RowBot, RowTop } from "./ToolsRow";
 const Tools = () => {
   const container = useRef();
   return (
     <section className="tools" ref={container}>
       <div className="autoContainer">
         <div className="tools__inner">
-          <ToolsRow />
-          <ToolsRow direction={-1} />
+          <ToolsRow>
+            <RowTop />
+          </ToolsRow>
+          <ToolsRow direction={-1}>
+            <RowBot />
+          </ToolsRow>
         </div>
       </div>
       <div className="bg">

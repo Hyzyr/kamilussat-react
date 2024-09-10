@@ -1,12 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { publicUrl } from "global";
-import React, { useRef } from "react";
+import React, { Children, useRef } from "react";
 import gsap from "gsap";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
 
-const ToolsRow = ({ direction = 1 }) => {
+const ToolsRow = ({ children, direction = 1 }) => {
   const ref = useRef();
   useGSAP(() => {
     const d = direction;
@@ -30,14 +30,14 @@ const ToolsRow = ({ direction = 1 }) => {
   });
   return (
     <div className="tools__row" ref={ref}>
-      <RowTop />
-      <RowTop />
+     {children}
+     {children}
     </div>
   );
 };
-const RowTop = () => {
+export const RowTop = () => {
   return (
-    <div className="tools__row-container">
+    <div className="tools__row-container _left">
       <ToolItem src="images/tools/tool-1.png" alt="jet brains" />
       <ToolItem src="images/tools/tool-2.png" alt="angular" />
       <ToolItem src="images/tools/tool-3.png" alt="dj" />
@@ -47,6 +47,21 @@ const RowTop = () => {
       <ToolItem src="images/tools/tool-6.png" alt="wolf" />
       <ToolItem src="images/tools/tool-7.png" alt="docker" />
       <ToolItem src="images/tools/tool-8.png" alt="rest" />
+    </div>
+  );
+};
+export const RowBot = () => {
+  return (
+    <div className="tools__row-container _left">
+      <ToolItem src="images/tools/tool-9.png" alt="tool-9" />
+      <ToolItem src="images/tools/tool-10.png" alt="swift" />
+      <ToolItem src="images/tools/tool-11.png" alt="nginx" />
+      <ToolItem src="images/tools/tool-12.png" alt="dolphin" />
+      <ToolItem src="images/tools/tool-13.png" alt="html" />
+      <ToolItem src="images/tools/tool-14.png" alt="css" />
+      <ToolItem src="images/tools/tool-15.png" alt="pen" />
+      <ToolItem src="images/tools/tool-16.png" alt="circle" />
+      <ToolItem src="images/tools/tool-17.png" alt="android" />
     </div>
   );
 };
