@@ -9,16 +9,18 @@ import gsap from 'gsap';
 const Team = () => {
   const wrapper = useRef(null);
   const isVisible = useVisibleCheck({ ref: wrapper });
+  const isAnimated = useRef(false);
 
   useGSAP(
     () => {
-      if (isVisible)
+      if (isVisible && !isAnimated.current) {
         gsap.fromTo(
           '.team__inner-box > h3 , .team__inner-box > p, .team__item',
           { opacity: 0, scale: 0.98 },
           { opacity: 1, scale: 1, duration: 0.5, delay: 0.25, stagger: 0.12 }
         );
-      else
+        isAnimated.current = true;
+      } else if (!isAnimated.current)
         gsap.set('.team__inner-box > h3 , .team__inner-box > p, .team__item', {
           opacity: 0,
           scale: 0.98,

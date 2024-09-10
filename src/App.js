@@ -7,7 +7,6 @@ import useSmoothScroll from 'hooks/useSmoothScroll';
 
 const App = () => {
   // useSmoothScroll();
-  console.log('hello to kamil-ussat')
   return (
     <>
       <Header />

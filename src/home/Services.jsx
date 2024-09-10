@@ -5,17 +5,19 @@ import gsap from 'gsap';
 
 const Services = () => {
   const wrapper = useRef(null);
+  const isAnimated = useRef(false);
   const isVisible = useVisibleCheck({ ref: wrapper });
 
   useGSAP(
     () => {
-      if (isVisible)
+      if (isVisible && !isAnimated.current) {
         gsap.fromTo(
           '.services__inner-text , .services__item',
           { opacity: 0, scale: 0.98 },
           { opacity: 1, scale: 1, duration: 0.5, delay: 0.25, stagger: 0.12 }
         );
-      else
+        isAnimated.current = true;
+      } else if (!isAnimated.current)
         gsap.set('.services__inner-text , .services__item', {
           opacity: 0,
           scale: 0.98,

@@ -49,7 +49,7 @@ const Newsletter = () => {
               </div>
             </button>
             <div className="bg">
-              <div className="bg__circle">
+              <div className="bg__circle ">
                 <span></span>
                 <span></span>
                 <span></span>

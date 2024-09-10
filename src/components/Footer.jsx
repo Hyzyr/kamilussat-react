@@ -114,7 +114,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="bg">
-        <div className="bg__circle">
+        <div className="bg__circle ">
           <span></span>
           <span></span>
           <span></span>

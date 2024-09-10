@@ -46,7 +46,7 @@ const Hero = () => {
         </div>
       </div>
       <div className="bg">
-        <div className="bg__circle noanimation">
+        <div className="bg__circle ">
           <span></span>
           <span></span>
           <span></span>
