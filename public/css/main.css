@@ -1147,6 +1147,9 @@ svg {
 .footer__row-button {
   display: flex;
   gap: 10px;
+  flex: 1;
+  line-height: 1.4;
+  padding-top: 0.2em;
   color: #006083;
   cursor: pointer;
   transition: all 0.2s ease-in-out 0s;
@@ -1161,7 +1164,6 @@ svg {
 }
 .footer__row-button .text {
   flex: 1;
-  line-height: 1.4;
 }
 .footer__row-button:hover {
   color: #47b3e4;
