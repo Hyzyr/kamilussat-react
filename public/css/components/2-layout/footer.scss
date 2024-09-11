@@ -41,6 +41,9 @@
     &-button {
       display: flex;
       gap: 10px;
+      flex: 1;
+      line-height: 1.4;
+      padding-top: 0.2em;
       color: $blue-90;
       cursor: pointer;
       .ico {
@@ -51,9 +54,8 @@
         transition: unset;
       }
       @include transition;
-      .text{
+      .text {
         flex: 1;
-        line-height: 1.4;
       }
       &:hover {
         color: $primary;
