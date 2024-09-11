@@ -1,37 +1,46 @@
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { publicUrl } from "global";
-import React, { Children, useRef } from "react";
-import gsap from "gsap";
+import { useGSAP } from '@gsap/react';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { publicUrl } from 'global';
+import React, { Children, useRef } from 'react';
+import gsap from 'gsap';
+
 gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
 const ToolsRow = ({ children, direction = 1 }) => {
   const ref = useRef();
   useGSAP(() => {
     const d = direction;
-    const rowsContainer = ref.current.querySelectorAll(".tools__row-container");
-    const timeline = gsap.timeline({
-      repeat: -1,
-      onComplete: () => console.log("1"),
-    });
+    const rowsContainer = ref.current.querySelectorAll('.tools__row-container');
+    const timeline = gsap.timeline({ repeat: -1 });
+
     timeline
       .fromTo(
         rowsContainer[0],
         { xPercent: d * 0 },
-        { xPercent: d * -100, ease: "none", duration: 10 }
+        { xPercent: d * -100, ease: 'none', duration: 30 }
       )
       .fromTo(
         rowsContainer[1],
         { xPercent: d * 100 },
-        { xPercent: d * 0, ease: "none", duration: 10, delay: 0.2 },
-        "<"
+        { xPercent: d * 0, ease: 'none', duration: 30, delay: 0.2 },
+        '<'
       );
+
+    // ScrollTrigger.create({
+    //   trigger: ref.current,
+    //   start: 'top top',
+    //   end: 'bottom bottom',
+    //   onUpdate: (self) => {
+    //     const scrollVelocity = Math.abs(self.getVelocity());
+    //     timeline.timeScale(scrollVelocity / 100); // Scale based on velocity (adjust the divisor for sensitivity)
+    //   },
+    // });
   });
   return (
     <div className="tools__row" ref={ref}>
-     {children}
-     {children}
+      {children}
+      {children}
     </div>
   );
 };
@@ -65,7 +74,7 @@ export const RowBot = () => {
     </div>
   );
 };
-const ToolItem = ({ src, alt, addClass = "" }) => {
+const ToolItem = ({ src, alt, addClass = '' }) => {
   return (
     <div className={`tools__row-item ${addClass}`}>
       <img src={publicUrl + src} alt={alt} />

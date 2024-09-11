@@ -73,7 +73,6 @@ export default function App({ isObserved = true }) {
       shadows
       camera={{ position: [-4.5, 2, 5], fov: 53 }}
       dpr={window.devicePixelRatio > 1 ? 1.5 : 1}
-      style={{ display: !isObserved ? 'none' : 'block' }}
       // gl={{ alpha: true, antialias: true, preserveDrawingBuffer: true }}
       // style={{ background: 'transparent' }}
       // onCreated={({ gl }) => {

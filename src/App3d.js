@@ -49,7 +49,6 @@ function Diamond(props) {
           ior={1.8}
           backfaceIor={1.1}
           // intensity={0.1}
-
         >
           <mesh
             castShadow
@@ -108,17 +107,17 @@ export default function App({ isObserved = true }) {
           position={[0.35, -0.55, 0]}
           lightSource={[5, 5, -10]}
           worldRadius={0.01}> */}
-          <mesh castShadow position={[-1.75, 0, -1]} scale={0.5}>
-            <sphereGeometry args={[1, 64, 64]} />
-            <MeshTransmissionMaterial
-              resolution={300}
-              distortion={0}
-              color="#FF8F20"
-              roughness={0.15}
-              thickness={1}
-              anisotropy={1}
-            />
-          </mesh>
+        <mesh castShadow position={[-1.75, 0, -1]} scale={0.5}>
+          <sphereGeometry args={[1, 64, 64]} />
+          <MeshTransmissionMaterial
+            resolution={300}
+            distortion={0}
+            color="#FF8F20"
+            roughness={0.15}
+            thickness={1}
+            anisotropy={1}
+          />
+        </mesh>
         {/* </Caustics> */}
 
         {/* <mesh
@@ -135,7 +134,9 @@ export default function App({ isObserved = true }) {
           />
         </mesh>  */}
       </>
-      <AccumulativeShadows
+
+      {/*  shadows */}
+      {/* <AccumulativeShadows
         temporal
         frames={50}
         color="lightblue"
@@ -152,7 +153,7 @@ export default function App({ isObserved = true }) {
           position={[5, 5, -10]}
           bias={0}
         />
-      </AccumulativeShadows>
+      </AccumulativeShadows> */}
       {/* <Environment files={publicUrl + '3dmodel/neon.hdr'} /> */}
       <OrbitControls
         makeDefault

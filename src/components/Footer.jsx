@@ -34,8 +34,8 @@ const Footer = () => {
                     </svg>
                   </span>
                   <span className="text">
-                    Beýik Saparmyrat Türkmenbaşy şaýoly 81, Aşgabat 744000,
-                    Turkmenistan
+                    Aşgabat 744000, Turkmenistan<br/>
+                    Beýik Saparmyrat Türkmenbaşy şaýoly 81, 
                   </span>
                 </a>
                 {/* <a
