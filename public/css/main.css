@@ -1146,7 +1146,6 @@ svg {
 }
 .footer__row-button {
   display: flex;
-  align-items: center;
   gap: 10px;
   color: #006083;
   cursor: pointer;
@@ -1154,10 +1153,15 @@ svg {
   -moz-transition: all 0.2s ease-in-out 0s;
 }
 .footer__row-button .ico {
+  margin-top: 2px;
   color: inherit;
   width: 25px;
   height: 25px;
   transition: unset;
+}
+.footer__row-button .text {
+  flex: 1;
+  line-height: 1.4;
 }
 .footer__row-button:hover {
   color: #47b3e4;

@@ -1,5 +1,5 @@
-import { publicUrl } from 'global';
-import React from 'react';
+import { publicUrl } from "global";
+import React from "react";
 
 const Footer = () => {
   return (
@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="footer__row">
             <div className="footer__row-column _lg">
               <div className="logo">
-                <img src={publicUrl + 'images/logo.png'} alt="logo" />
+                <img src={publicUrl + "images/logo.png"} alt="logo" />
               </div>
               <p>
                 At Kamil Ussat, we deliver innovative solutions and exceptional
@@ -17,7 +17,10 @@ const Footer = () => {
                 results. Connect with us to elevate your business.
               </p>
               <div className="footer__row-group">
-                <div className="footer__row-button">
+                <a
+                  href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3f6ffd8df8c56ed3:0xf9d4000be83a5356?sa=X&ved=1t:8290&ictx=111"
+                  className="footer__row-button"
+                >
                   <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <path
@@ -30,9 +33,15 @@ const Footer = () => {
                       />
                     </svg>
                   </span>
-                  <span className="text">Ashgabat, Turkmenistan</span>
-                </div>
-                <div className="footer__row-button">
+                  <span className="text">
+                    Beýik Saparmyrat Türkmenbaşy şaýoly 81, Aşgabat 744000,
+                    Turkmenistan
+                  </span>
+                </a>
+                {/* <a
+                  href="mailto:kamilussat@gmail.com"
+                  className="footer__row-button"
+                >
                   <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <path
@@ -45,9 +54,9 @@ const Footer = () => {
                       />
                     </svg>
                   </span>
-                  <span className="text">+99371000001</span>
-                </div>
-                <div className="footer__row-button">
+                  <span className="text">kamilussat@gmail.com</span>
+                </a> */}
+                <a href="tel:+99371667221" className="footer__row-button">
                   <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <path
@@ -62,8 +71,8 @@ const Footer = () => {
                       />
                     </svg>
                   </span>
-                  <span className="text">+99371000001</span>
-                </div>
+                  <span className="text">+99371667221</span>
+                </a>
               </div>
             </div>
             <div className="footer__row-column _links">
@@ -110,7 +119,9 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <p className="footer__copy">© 2023 Kamil Ussat. All rights reserved</p>
+          <p className="footer__copy">
+            © 2023 Kamil Ussat. All rights reserved
+          </p>
         </div>
       </div>
       <div className="bg">
