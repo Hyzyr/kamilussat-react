@@ -1,10 +1,13 @@
-import React, { Suspense, useRef } from "react";
-import Diamond from "App3d";
-import useVisibleCheck from "hooks/useVisibleCheck";
+import React, { Suspense, useRef } from 'react';
+import Diamond from 'App3d';
+import DiamondHd from 'App3dHd';
+import useVisibleCheck from 'hooks/useVisibleCheck';
+import useAndroidCheck from 'hooks/useAndroidCheck';
 
 const Hero = () => {
   const imgRef = useRef();
   const isVisible = true;
+  const isAndroid = useAndroidCheck();
   // const isVisible = useVisibleCheck({ ref: imgRef });
 
   return (
@@ -38,9 +41,12 @@ const Hero = () => {
           </div>
           <div className="intro__inner-image" ref={imgRef}>
             <div className="ratioImage">
-              <Suspense fallback="loading">
-                <Diamond isObserved={isVisible} />
-              </Suspense>
+              {isVisible && (
+                <Suspense fallback="loading">
+                  {isAndroid && <Diamond isObserved={isVisible} />}
+                  {!isAndroid && <DiamondHd isObserved={isVisible} />}
+                </Suspense>
+              )}
             </div>
           </div>
         </div>
