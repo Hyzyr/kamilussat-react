@@ -1,8 +1,8 @@
-import React, { Suspense, useRef } from 'react';
-import Diamond from 'App3d';
-import DiamondHd from 'App3dHd';
-import useVisibleCheck from 'hooks/useVisibleCheck';
-import useAndroidCheck from 'hooks/useAndroidCheck';
+import React, { Suspense, useRef } from "react";
+import Diamond from "App3d";
+import DiamondHd from "App3dHd";
+import useVisibleCheck from "hooks/useVisibleCheck";
+import useAndroidCheck from "hooks/useAndroidCheck";
 
 const Hero = () => {
   const imgRef = useRef();
@@ -26,8 +26,8 @@ const Hero = () => {
               solutions tailored to elevate your business and drive impactful
               results.
             </p>
-            <button className="button button--primary">
-              <span className="text--title">CONTACT uS</span>
+            <a href="#contact" className="button button--primary">
+              <span className="text--title">CONTACT US</span>
               <span className="ico ico--stroke">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
                   <path
@@ -37,7 +37,7 @@ const Hero = () => {
                   />
                 </svg>
               </span>
-            </button>
+            </a>
           </div>
           <div className="intro__inner-image" ref={imgRef}>
             <div className="ratioImage">

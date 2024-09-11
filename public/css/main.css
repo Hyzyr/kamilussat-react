@@ -1217,6 +1217,7 @@ svg {
 .footer .bg {
   font-size: 22px;
   z-index: 0;
+  overflow: hidden;
 }
 .footer .bg__circle {
   right: -32%;
