@@ -42,15 +42,14 @@ const Hero = () => {
           </div>
           <div className="intro__inner-image" ref={imgRef}>
             <div className="ratioImage">
-              {/* <NebulaComponent /> */}
+              <NebulaComponent />
               {isVisible && (
-                <>
-                  <Suspense fallback="loading">
-                    <Diamond isObserved={isVisible} />
-                    {/* {isAndroid && <Diamond isObserved={isVisible} />} */}
-                    {/* {!isAndroid && <DiamondHd isObserved={isVisible} />} */}
-                  </Suspense>
-                </>
+                <> </>
+                // <Suspense fallback="loading">
+                //   <Diamond isObserved={isVisible} />
+                //   {/* {isAndroid && <Diamond isObserved={isVisible} />} */}
+                //   {/* {!isAndroid && <DiamondHd isObserved={isVisible} />} */}
+                // </Suspense>
               )}
             </div>
           </div>
