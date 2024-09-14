@@ -7,7 +7,7 @@ import useAndroidCheck from 'hooks/useAndroidCheck';
 const Hero = () => {
   const imgRef = useRef();
   const isVisible = true;
-  const isAndroid = useAndroidCheck();
+  // const isAndroid = useAndroidCheck();
   // const isVisible = useVisibleCheck({ ref: imgRef });
 
   return (
@@ -42,10 +42,12 @@ const Hero = () => {
           <div className="intro__inner-image" ref={imgRef}>
             <div className="ratioImage">
               {isVisible && (
-                <Suspense fallback="loading">
-                  {isAndroid && <Diamond isObserved={isVisible} />}
-                  {!isAndroid && <DiamondHd isObserved={isVisible} />}
-                </Suspense>
+          <></>
+                // <Suspense fallback="loading">
+                //   <Diamond isObserved={isVisible} />
+                //   {/* {isAndroid && <Diamond isObserved={isVisible} />} */}
+                //   {/* {!isAndroid && <DiamondHd isObserved={isVisible} />} */}
+                // </Suspense>
               )}
             </div>
           </div>
