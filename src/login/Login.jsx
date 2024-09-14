@@ -10,9 +10,10 @@ const Login = () => {
           <div className="login__inner-row">
             <div className="login__inner-video">
               <div className="ratioImage">
-                <video autoPlay muted loop>
+                {/* <video autoPlay muted loop>
                   <source src={"video/diamond.mp4"} type="video/mp4" />
-                </video>
+                </video> */}
+                <img src="/video/poster.png" alt="poster" />
               </div>
             </div>
             <div className={`login__form ${tab === 1 ? "active" : ""}`}>

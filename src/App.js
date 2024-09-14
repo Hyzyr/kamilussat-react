@@ -1,3 +1,4 @@
+import { Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import Header from "components/Header";
 import Home from "home/Home";
@@ -8,21 +9,15 @@ import Login from "login/Login";
 
 const App = () => {
   // useSmoothScroll();
-  const [isLogged, setIsLogged] = useState(true);
-  if (!isLogged) {
-    document.getElementById("root").classList.add("main--sm");
-  }
   return (
     <>
-      {isLogged && (
-        <>
-          <Header setIsLogged={setIsLogged} />
-          <Home />
-          <Newsletter />
-          <Footer />
-        </>
-      )}
-      {!isLogged && <Login />}
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Newsletter />
+      <Footer />
     </>
   );
 };

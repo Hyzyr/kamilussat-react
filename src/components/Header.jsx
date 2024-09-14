@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { publicUrl } from "global";
 
-const Header = ({ setIsLogged }) => {
+const Header = () => {
   const [active, setActive] = useState(false);
   const [sticky, setSticky] = useState(false);
 
@@ -138,10 +139,7 @@ const Header = ({ setIsLogged }) => {
             </div>
           </div>
           <div className="header__inner-group">
-            <button
-              className={`button button--primary _hideMob`}
-              onClick={() => setIsLogged(false)}
-            >
+            <Link className={`button button--primary _hideMob`} to={"login"}>
               <span className="text--title">Sign Up</span>
               <span className="ico ico--stroke">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -152,7 +150,7 @@ const Header = ({ setIsLogged }) => {
                   />
                 </svg>
               </span>
-            </button>
+            </Link>
             <button
               className={`burger ${active ? "active" : ""}`}
               id="menuBtn"
