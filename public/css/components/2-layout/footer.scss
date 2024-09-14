@@ -47,7 +47,6 @@
       color: $blue-90;
       cursor: pointer;
       .ico {
-        margin-top: 2px;
         color: inherit;
         width: 25px;
         height: 25px;
@@ -113,6 +112,7 @@
   .bg {
     font-size: 22px;
     z-index: 0;
+    overflow: hidden;
     &__circle {
       right: -32%;
       top: -9%;

@@ -33,9 +33,13 @@ const Footer = () => {
                     </svg>
                   </span>
                   <span className="text">
+<<<<<<< HEAD
                     Aşgabat 744000, Turkmenistan
                     <br />
                     Beýik Saparmyrat Türkmenbaşy şaýoly 81,
+=======
+                    Beyik S.A sayoly 81 Ashgabat 744000 Turkmenistan
+>>>>>>> 1e2c3cb3d7d64c80440b30fff808dd8c01155aab
                   </span>
                 </a>
                 {/* <a
@@ -95,7 +99,7 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div className="footer__row-column">
+            <div className="footer__row-column" id="contact">
               <h6 className="text--title _lg">Contact Us</h6>
               <div className="footer__row-contact">
                 <div className="input input--secondary">
