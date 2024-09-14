@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
+import { OrbitControls } from "@react-three/drei";
 
 const Nebula = () => {
   const meshRef = useRef();
@@ -11,9 +12,12 @@ const Nebula = () => {
     const count = 4000;
 
     const geometry = new THREE.BufferGeometry();
-    const positions = Float32Array.from({ length: count * 3 }, () => (Math.random() - 0.5) * 2 * Math.max(width, height));
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-    
+    const positions = Float32Array.from(
+      { length: count * 3 },
+      () => (Math.random() - 0.5) * 2 * Math.max(width, height)
+    );
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
     return geometry;
   });
 
@@ -27,17 +31,30 @@ const Nebula = () => {
   return (
     <points ref={meshRef}>
       <bufferGeometry {...geometry} />
-      <pointsMaterial ref={materialRef} size={0.1} color="#FFFFFF" transparent sizeAttenuation opacity={0.75} />
+      <pointsMaterial
+        ref={materialRef}
+        size={0.15}
+        color="#47b3e4"
+        transparent
+        sizeAttenuation
+        opacity={0.3}
+      />
     </points>
   );
 };
 
 const NebulaComponent = () => {
   return (
-    <div style={{ height: '100vh', backgroundColor: '#000' }}>
+    <div style={{ height: "100vh", backgroundColor: "#fff" }}>
       <Canvas camera={{ position: [0, 0, 5] }}>
         <ambientLight intensity={0.5} />
         <Nebula />
+        <OrbitControls
+          makeDefault
+          minPolarAngle={0}
+          maxPolarAngle={Math.PI / 1}
+          enableZoom={false}
+        />
       </Canvas>
     </div>
   );

@@ -33,6 +33,7 @@
   @include typography-940;
   @include index-940;
   @include footer-940;
+  @include login-940;
 }
 @media (max-width: 768px) {
   .autoContainer {
@@ -41,6 +42,7 @@
   @include typography-768;
   @include index-768;
   @include footer-768;
+  @include login-768;
 }
 @media (max-width: 640px) {
   @include index-640;

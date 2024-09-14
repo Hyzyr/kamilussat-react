@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { publicUrl } from "global";
 
-const Header = () => {
+const Header = ({ setIsLogged }) => {
   const [active, setActive] = useState(false);
   const [sticky, setSticky] = useState(false);
 
@@ -138,7 +138,10 @@ const Header = () => {
             </div>
           </div>
           <div className="header__inner-group">
-            <button className={`button button--primary _hideMob`}>
+            <button
+              className={`button button--primary _hideMob`}
+              onClick={() => setIsLogged(false)}
+            >
               <span className="text--title">Sign Up</span>
               <span className="ico ico--stroke">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">

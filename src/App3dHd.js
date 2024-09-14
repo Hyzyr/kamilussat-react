@@ -141,7 +141,7 @@ export default function App({ isObserved = true }) {
           />
         </mesh>  */}
       </>
-      <AccumulativeShadows
+      {/* <AccumulativeShadows
         temporal
         frames={100}
         color="lightblue"
@@ -158,7 +158,7 @@ export default function App({ isObserved = true }) {
           position={[5, 5, -10]}
           bias={0.001}
         />
-      </AccumulativeShadows>
+      </AccumulativeShadows> */}
       <Environment files={publicUrl + '3dmodel/neon.hdr'} />
       <OrbitControls
         makeDefault

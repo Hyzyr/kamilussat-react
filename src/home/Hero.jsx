@@ -3,6 +3,7 @@ import Diamond from "App3d";
 import DiamondHd from "App3dHd";
 import useVisibleCheck from "hooks/useVisibleCheck";
 import useAndroidCheck from "hooks/useAndroidCheck";
+import NebulaComponent from "AppParticles";
 
 const Hero = () => {
   const imgRef = useRef();
@@ -41,13 +42,15 @@ const Hero = () => {
           </div>
           <div className="intro__inner-image" ref={imgRef}>
             <div className="ratioImage">
+              {/* <NebulaComponent /> */}
               {isVisible && (
-          <></>
-                // <Suspense fallback="loading">
-                //   <Diamond isObserved={isVisible} />
-                //   {/* {isAndroid && <Diamond isObserved={isVisible} />} */}
-                //   {/* {!isAndroid && <DiamondHd isObserved={isVisible} />} */}
-                // </Suspense>
+                <>
+                  <Suspense fallback="loading">
+                    <Diamond isObserved={isVisible} />
+                    {/* {isAndroid && <Diamond isObserved={isVisible} />} */}
+                    {/* {!isAndroid && <DiamondHd isObserved={isVisible} />} */}
+                  </Suspense>
+                </>
               )}
             </div>
           </div>
