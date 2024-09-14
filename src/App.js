@@ -8,7 +8,7 @@ import Login from "login/Login";
 
 const App = () => {
   // useSmoothScroll();
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
   if (!isLogged) {
     document.getElementById("root").classList.add("main--sm");
   }
