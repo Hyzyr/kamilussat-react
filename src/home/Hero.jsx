@@ -3,7 +3,7 @@ import Diamond from "App3d";
 import DiamondHd from "App3dHd";
 import useVisibleCheck from "hooks/useVisibleCheck";
 import useAndroidCheck from "hooks/useAndroidCheck";
-import NebulaComponent from "AppParticles";
+import NebulaComponent from "AppParticlesWithLineAndMoving";
 
 const Hero = () => {
   const imgRef = useRef();
