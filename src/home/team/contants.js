@@ -1,7 +1,7 @@
 export const teamMates = [
   {
     name: 'Tore Gurbanov',
-    speciality: 'Manager of IT department',
+    speciality: 'Project Manager, TeamLead',
     image: 'images/team/image-1.png',
     socialLinks: {
       linkedin: '',
@@ -11,7 +11,7 @@ export const teamMates = [
   },
   {
     name: 'Hydyr Ovezberdiyev',
-    speciality: 'Project Manager Senior Dev.',
+    speciality: 'Senior Designer, UI/UX expert',
     image: 'images/team/image-2.png',
     socialLinks: {
       linkedin: '',
@@ -21,7 +21,7 @@ export const teamMates = [
   },
   {
     name: 'Eziz Annanepesow',
-    speciality: 'Front-End team lead Senior Dev.',
+    speciality: 'Senior Dev. Javascript Master',
     image: 'images/team/image-3.png',
     socialLinks: {
       linkedin: '',
