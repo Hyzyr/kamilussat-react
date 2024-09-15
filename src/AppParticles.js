@@ -34,10 +34,10 @@ const Nebula = () => {
       <pointsMaterial
         ref={materialRef}
         size={0.15}
-        color="#47b3e4"
+        color="#007eac"
         transparent
         sizeAttenuation
-        opacity={0.3}
+        opacity={1}
       />
     </points>
   );
@@ -45,7 +45,7 @@ const Nebula = () => {
 
 const NebulaComponent = () => {
   return (
-    <div style={{ height: "100vh", backgroundColor: "#fff" }}>
+    <div style={{ height: "100vh",  }}>
       <Canvas camera={{ position: [0, 0, 5] }}>
         <ambientLight intensity={0.5} />
         <Nebula />

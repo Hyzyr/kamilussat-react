@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Input from 'components/Input';
-import { Link, Route, Routes } from 'react-router-dom';
+import React, { useState } from "react";
+import Input from "components/Input";
+import { Link, Route, Routes } from "react-router-dom";
 
 const Auth = () => {
   return (
@@ -10,10 +10,9 @@ const Auth = () => {
           <div className="login__inner-row">
             <div className="login__inner-video">
               <div className="ratioImage">
-                {/* <video autoPlay muted loop>
-                  <source src={"video/diamond.mp4"} type="video/mp4" />
-                </video> */}
-                <img src="/video/poster.png" alt="poster" />
+                <video autoPlay muted loop poster="/video/poster.png">
+                  <source src={"/video/diamond.mp4"} type="video/mp4" />
+                </video>
               </div>
             </div>
             <Routes>
@@ -41,8 +40,8 @@ const SignIn = () => {
           <span>or sign in with email</span>
         </div>
       </div>
-      <Input label={'Username or Email'} id={'email'} />
-      <Input label={'Password'} button={'Forgot?'} id={'passwd'} />
+      <Input label={"Username or Email"} id={"email"} />
+      <Input label={"Password"} button={"Forgot?"} id={"passwd"} />
       <div className="login__form-box">
         <button className="button button--primary">
           <span>Sign In</span>
@@ -72,8 +71,8 @@ const SignUp = () => {
           <span>or sign up with email</span>
         </div>
       </div>
-      <Input label={'Username or Email'} id={'email2'} />
-      <Input label={'Password'} button={'Forgot?'} id={'passwd'} />
+      <Input label={"Username or Email"} id={"email2"} />
+      <Input label={"Password"} button={"Forgot?"} id={"passwd"} />
       <div className="login__form-box">
         <button className="button button--primary">
           <span>Sign Up</span>
