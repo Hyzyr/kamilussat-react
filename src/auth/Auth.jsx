@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Input from "components/Input";
 import { Link, Route, Routes } from "react-router-dom";
+import NebulaComponent from "AppParticles";
 
 const Auth = () => {
   return (
@@ -8,18 +9,24 @@ const Auth = () => {
       <div className="autoContainer">
         <div className="login__inner">
           <div className="login__inner-row">
-            <div className="login__inner-video">
+            {/* <div className="login__inner-video">
               <div className="ratioImage">
                 <video autoPlay loop muted poster="/video/poster.png">
                   <source src={"/video/diamond.mp4"} type="video/mp4" />
                 </video>
               </div>
-            </div>
+            </div> */}
+            <div className="login__inner-space"></div>
             <Routes>
               <Route path="signin" element={<SignIn />} />
               <Route path="signup" element={<SignUp />} />
             </Routes>
           </div>
+        </div>
+      </div>
+      <div className="login__bg">
+        <div className="login__bg-particles">
+          <NebulaComponent />
         </div>
       </div>
     </section>

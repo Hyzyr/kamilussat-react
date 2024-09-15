@@ -90,9 +90,9 @@ const Footer = () => {
                 <a href="#" className="footer__row-link">
                   Projects
                 </a>
-                <a href="#" className="footer__row-link">
+                {/* <a href="#" className="footer__row-link">
                   Team
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="footer__row-column" id="contact">

@@ -113,7 +113,7 @@ const Header = () => {
                 >
                   Projects
                 </a>
-                <a
+                {/* <a
                   href="#team"
                   className={linkClassName("team")}
                   onClick={() => {
@@ -122,7 +122,7 @@ const Header = () => {
                   }}
                 >
                   Team
-                </a>
+                </a> */}
               </div>
               <Link
                 className={`button button--primary _hideDesktop`}

@@ -4,6 +4,7 @@
   flex-direction: column;
   background: $white;
   padding: 50px 0;
+  position: relative;
   overflow: hidden;
   &__inner {
     width: 100%;
@@ -43,6 +44,10 @@
         }
       }
     }
+    &-space {
+      width: 36%;
+      max-width: 450px;
+    }
   }
   &__form {
     display: none;
@@ -52,6 +57,7 @@
     margin: 0 auto;
     font-size: 20px;
     gap: 1.3em;
+    z-index: 1;
     &-box {
       display: flex;
       flex-direction: column;
@@ -137,6 +143,19 @@
       animation-duration: 0.4s;
     }
   }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    &-particles {
+      width: 35%;
+      max-width: 500px;
+      background: linear-gradient(45deg, #47b3e45c, transparent);
+    }
+  }
   .autoContainer {
     width: 100%;
     flex: 1;
@@ -155,6 +174,9 @@
       &-video {
         width: 40%;
       }
+      &-space {
+        width: 40%;
+      }
     }
     &__form {
       width: calc(50% - 10px);
@@ -165,6 +187,11 @@
       }
       &__outer {
         font-size: 16px;
+      }
+    }
+    &__bg {
+      &-particles {
+        width: 40%;
       }
     }
   }
@@ -190,8 +217,12 @@
     }
     &__form {
       width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
       font-size: 16px;
-      max-width: unset;
+    }
+    &__bg {
+      display: none;
     }
   }
 }
