@@ -398,18 +398,19 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 10px;
+      gap: 14px;
     }
     &-ico {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 2.66em;
+      width: 7em;
       height: 2.44em;
       img {
         width: 100%;
         height: 100%;
         object-fit: contain;
+        object-position: left;
       }
     }
     &-info {
