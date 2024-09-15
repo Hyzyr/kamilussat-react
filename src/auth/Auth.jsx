@@ -10,7 +10,7 @@ const Auth = () => {
           <div className="login__inner-row">
             <div className="login__inner-video">
               <div className="ratioImage">
-                <video autoPlay muted loop poster="/video/poster.png">
+                <video autoPlay loop muted poster="/video/poster.png">
                   <source src={"/video/diamond.mp4"} type="video/mp4" />
                 </video>
               </div>

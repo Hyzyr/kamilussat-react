@@ -65,6 +65,14 @@
         }
       }
     }
+    &-box{
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+  }
+  ._hideDesktop {
+    display: none;
   }
   .autoContainer {
     display: flex;
@@ -894,6 +902,9 @@
         align-items: center;
         z-index: 1;
       }
+    }
+    ._hideDesktop {
+      display: flex;
     }
     .bg {
       &__circle {

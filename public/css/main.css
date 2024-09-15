@@ -1449,6 +1449,14 @@ svg {
   width: 100% !important;
   height: 100% !important;
 }
+.intro__inner-box {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.intro ._hideDesktop {
+  display: none;
+}
 .intro .autoContainer {
   display: flex;
   flex-direction: column;
@@ -2507,6 +2515,9 @@ svg {
     text-align: center;
     align-items: center;
     z-index: 1;
+  }
+  .intro ._hideDesktop {
+    display: flex;
   }
   .intro .bg__circle {
     left: -70%;

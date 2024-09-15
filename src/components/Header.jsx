@@ -124,7 +124,10 @@ const Header = () => {
                   Team
                 </a>
               </div>
-              <button className="button button--primary _hideDesktop">
+              <Link
+                className={`button button--primary _hideDesktop`}
+                to={"/auth/signup"}
+              >
                 <span className="text--title">Sign Up</span>
                 <span className="ico ico--stroke">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -135,11 +138,14 @@ const Header = () => {
                     />
                   </svg>
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
           <div className="header__inner-group">
-            <Link className={`button button--primary _hideMob`} to={"/auth/signup"}>
+            <Link
+              className={`button button--primary _hideMob`}
+              to={"/auth/signup"}
+            >
               <span className="text--title">Sign Up</span>
               <span className="ico ico--stroke">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
