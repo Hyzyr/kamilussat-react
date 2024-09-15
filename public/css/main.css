@@ -1451,7 +1451,7 @@ svg {
 }
 .intro__inner-box {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 14px;
 }
 .intro ._hideDesktop {
@@ -2853,6 +2853,9 @@ svg {
   }
   .intro__inner-content {
     gap: 20px;
+  }
+  .intro__inner-box {
+    flex-direction: column;
   }
   .intro .bg {
     font-size: 13px;

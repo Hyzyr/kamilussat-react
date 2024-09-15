@@ -65,9 +65,9 @@
         }
       }
     }
-    &-box{
+    &-box {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       gap: 14px;
     }
   }
@@ -1160,6 +1160,9 @@
     &__inner {
       &-content {
         gap: 20px;
+      }
+      &-box {
+        flex-direction: column;
       }
     }
     .bg {
