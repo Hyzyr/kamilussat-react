@@ -160,7 +160,7 @@ const Header = () => {
             <button
               className={`burger ${active ? "active" : ""}`}
               id="menuBtn"
-              onClick={toggleActive}
+              onClick={()=>toggleActive()}
             >
               <span></span>
             </button>

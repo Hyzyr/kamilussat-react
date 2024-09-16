@@ -2,19 +2,16 @@ import { useRef } from 'react';
 import { Canvas, useLoader } from '@react-three/fiber';
 import {
   useGLTF,
-  Sphere,
   CubeCamera,
   Environment,
   OrbitControls,
   // HemisphereLight,
   SoftShadows,
   MeshDistortMaterial,
-  MeshWobbleMaterial,
 } from '@react-three/drei';
 
 import { EffectComposer, Glitch } from '@react-three/postprocessing';
 import { RGBELoader } from 'three-stdlib';
-import { useControls } from 'leva';
 import { publicUrl } from 'global';
 
 function ReflectiveSphere(props) {

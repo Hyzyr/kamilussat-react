@@ -22,7 +22,6 @@ const createVelocities = (count) => {
   }
   return velocities;
 };
-
 const createLines = (points, distance) => {
   const lines = [];
   const positions = points.array;
@@ -51,7 +50,6 @@ const createLines = (points, distance) => {
   }
   return new Float32Array(lines);
 };
-
 const ParticlesWithLines = ({ count = 500, distance = 2 }) => {
   const pointsGeometry = useMemo(() => {
     const geometry = new THREE.BufferGeometry();
