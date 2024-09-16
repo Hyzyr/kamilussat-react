@@ -8,6 +8,11 @@ const Auth = () => {
     <section className="login">
       <div className="autoContainer">
         <div className="login__inner">
+          <div className="login__bg">
+            <div className="login__bg-particles">
+              <NebulaComponent />
+            </div>
+          </div>
           <div className="login__inner-row">
             {/* <div className="login__inner-video">
               <div className="ratioImage">
@@ -22,11 +27,6 @@ const Auth = () => {
               <Route path="signup" element={<SignUp />} />
             </Routes>
           </div>
-        </div>
-      </div>
-      <div className="login__bg">
-        <div className="login__bg-particles">
-          <NebulaComponent />
         </div>
       </div>
     </section>

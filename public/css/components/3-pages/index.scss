@@ -1,5 +1,5 @@
 .intro {
-  padding: 50px 0 150px;
+  padding: 50px 0 100px;
   min-height: calc(100vh - 110px);
   display: flex;
   flex-direction: column;
@@ -94,7 +94,7 @@
   }
 }
 .tools {
-  padding: 90px 0;
+  padding: 30px 0 90px;
   position: relative;
   &__inner {
     display: flex;
@@ -840,7 +840,7 @@
 }
 @mixin index-1025 {
   .intro {
-    padding: 50px 0 130px;
+    padding: 50px 0 80px;
     min-height: calc(100vh - 70px);
     .bg {
       font-size: 16px;
@@ -1157,7 +1157,7 @@
 }
 @mixin index-460 {
   .intro {
-    padding: 20px 0 60px;
+    padding: 20px 0 40px;
     &__inner {
       &-content {
         gap: 20px;

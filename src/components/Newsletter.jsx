@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Newsletter = () => {
   return (
@@ -9,16 +10,12 @@ const Newsletter = () => {
             <div className="join__content-container">
               <h3 className="text--title _sm">Stay Updated</h3>
               <p>
-                Join our newsletter for the latest updates, insights, and
-                exclusive content. We promise to keep our emails informative and
-                spam-free
+                Register to gain detailed insights about our company, meet our
+                team, and stay informed on the latest updates.
               </p>
-              <div className="input">
-                <input type="text" placeholder="your email" />
-              </div>
-              <button className="button button--secondary">
-                <span className="text--title">SUBMIT</span>
-              </button>
+              <Link to={"auth/signup"} className="button button--secondary">
+                <span className="text--title">Sign up</span>
+              </Link>
             </div>
             <button className="button button--arrow">
               <span className="ico ico--stroke">

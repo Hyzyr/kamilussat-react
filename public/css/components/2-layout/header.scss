@@ -28,7 +28,7 @@
     height: 100%;
     opacity: 0;
     transition: 0.1s ease-in;
-    background: linear-gradient(180deg, #fff 0%, transparent);
+    background: linear-gradient(180deg, rgba($primary, 0.7), transparent);
   }
 
   &.sticky {

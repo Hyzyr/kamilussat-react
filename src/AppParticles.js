@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import * as THREE from 'three';
-import { OrbitControls } from '@react-three/drei';
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import * as THREE from "three";
+import { OrbitControls } from "@react-three/drei";
 
 const Nebula = () => {
   const meshRef = useRef();
@@ -16,7 +16,7 @@ const Nebula = () => {
       { length: count * 3 },
       () => (Math.random() - 0.5) * 2 * Math.max(width, height)
     );
-    geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
 
     return geometry;
   });
@@ -33,7 +33,7 @@ const Nebula = () => {
       <bufferGeometry {...geometry} />
       <pointsMaterial
         ref={materialRef}
-        size={0.08}
+        size={0.1}
         color="#007eac"
         transparent
         sizeAttenuation
@@ -45,7 +45,7 @@ const Nebula = () => {
 
 const NebulaComponent = () => {
   return (
-    <div style={{ height: '100vh' }}>
+    <div style={{ height: "100vh" }}>
       <Canvas camera={{ position: [0, 0, 5] }}>
         <ambientLight intensity={0.5} />
         <Nebula />

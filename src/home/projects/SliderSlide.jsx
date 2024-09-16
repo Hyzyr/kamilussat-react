@@ -1,5 +1,5 @@
-import React from 'react';
-import { publicUrl } from 'global';
+import React from "react";
+import { publicUrl } from "global";
 
 const ImageSlide = ({ projectTitle, projectImage }) => {
   return (
@@ -15,6 +15,7 @@ const InfoSlide = ({
   orgImage,
   projectTitle,
   projectDesc,
+  link,
   tools = [],
 }) => {
   return (
@@ -37,7 +38,7 @@ const InfoSlide = ({
             <ToolItem name={tool} key={index} />
           ))}
         </div>
-        <button className="button button--border">
+        <a href={link} target="_blank" className="button button--border">
           <span className="text--title">Go to webste</span>
           <span className="ico ico--stroke">
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
@@ -48,24 +49,24 @@ const InfoSlide = ({
               />
             </svg>
           </span>
-        </button>
+        </a>
       </div>
     </div>
   );
 };
-const ToolItem = ({ name = 'react' }) => {
+const ToolItem = ({ name = "react" }) => {
   const toolImage = React.useMemo(() => {
     switch (name) {
-      case 'react':
-        return '/images/tools/tool-4.png';
-      case 'github':
-        return '/images/tools/tool-5.png';
-      case 'html':
-        return '/images/tools/tool-13.png';
-      case 'css':
-        return '/images/tools/tool-14.png';
+      case "react":
+        return "/images/tools/tool-4.png";
+      case "github":
+        return "/images/tools/tool-5.png";
+      case "html":
+        return "/images/tools/tool-13.png";
+      case "css":
+        return "/images/tools/tool-14.png";
       default:
-        return '/images/tools/tool-4.png';
+        return "/images/tools/tool-4.png";
     }
   }, [name]);
 
