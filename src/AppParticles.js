@@ -33,7 +33,7 @@ const Nebula = () => {
       <bufferGeometry {...geometry} />
       <pointsMaterial
         ref={materialRef}
-        size={0.1}
+        size={window.innerWidth <= 768 ? 0.15 : 0.1}
         color="#007eac"
         transparent
         sizeAttenuation
