@@ -7,35 +7,35 @@ import { publicUrl } from 'global';
 const Auth = () => {
   return (
     <>
-      <a href="/" className="logo fixedlogo">
-        <img src={publicUrl + 'images/logo.png'} alt="logo" />
-      </a>
-      <section className="login">
-        <div className="autoContainer">
-          <div className="login__inner">
-            <div className="login__inner-row">
-              {/* <div className="login__inner-video">
-           <div className="ratioImage">
-             <video autoPlay loop muted poster="/video/poster.png">
-               <source src={"/video/diamond.mp4"} type="video/mp4" />
-             </video>
-           </div>
-         </div> */}
-              <div className="login__inner-space"></div>
-              <Routes>
-                <Route path="signin" element={<SignIn />} />
-                <Route path="signup" element={<SignUp />} />
-              </Routes>
+    <a href="/" className="logo fixedlogo">
+      <img src={publicUrl + 'images/logo.png'} alt="logo" />
+    </a>
+    <section className="login">
+      <div className="autoContainer">
+        <div className="login__inner">
+          <div className="login__bg">
+            <div className="login__bg-particles">
+              <NebulaComponent />
             </div>
           </div>
-        </div>
-        <div className="login__bg">
-          <div className="login__bg-particles">
-            <NebulaComponent />
+          <div className="login__inner-row">
+            {/* <div className="login__inner-video">
+              <div className="ratioImage">
+                <video autoPlay loop muted poster="/video/poster.png">
+                  <source src={"/video/diamond.mp4"} type="video/mp4" />
+                </video>
+              </div>
+            </div> */}
+            <div className="login__inner-space"></div>
+            <Routes>
+              <Route path="signin" element={<SignIn />} />
+              <Route path="signup" element={<SignUp />} />
+            </Routes>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
+  </>
   );
 };
 const SignIn = () => {
