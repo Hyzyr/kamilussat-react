@@ -21,14 +21,20 @@
   }
   &:after {
     position: absolute;
-    content: "";
+    content: '';
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     opacity: 0;
     transition: 0.1s ease-in;
-    background: linear-gradient(180deg, rgba($primary, 0.7), transparent);
+    background: linear-gradient(
+      180deg,
+      $primary,
+      $blue-30 40%,
+      rgba($blue-10, 0.5) 80%,
+      transparent
+    );
   }
 
   &.sticky {
@@ -36,7 +42,7 @@
     padding: 15px 0;
     transition-duration: 0.25s;
     &:after {
-      opacity: 0.5;
+      opacity: 0.8;
       transition-duration: 0.35s;
     }
   }
@@ -64,7 +70,7 @@
       line-height: 1;
       transition: 0.3s ease-out;
       &::before {
-        content: "";
+        content: '';
         width: 4px;
         height: 4px;
         border-radius: 50%;
@@ -125,12 +131,12 @@
     transform: translate(-50%, -50%);
   }
   &::before {
-    content: "";
+    content: '';
     top: 0;
     transform: translateX(-50%);
   }
   &::after {
-    content: "";
+    content: '';
     bottom: 0;
     transform: translateX(-50%);
   }
