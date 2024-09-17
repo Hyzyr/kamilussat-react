@@ -527,7 +527,7 @@
         padding-bottom: 125%;
       }
       &:after {
-        content: "";
+        content: '';
         width: 100%;
         height: 100%;
         background: linear-gradient(
@@ -599,7 +599,7 @@
   position: relative;
   padding: 50px 0 0;
   &::after {
-    content: "";
+    content: '';
     width: 100%;
     height: 50%;
     background: $primary-3;
@@ -888,7 +888,7 @@
     &__inner {
       position: relative;
       flex-direction: column;
-      gap: 40px;
+      gap: 20px;
       &-image {
         order: -1;
         width: 100%;
@@ -902,6 +902,14 @@
         text-align: center;
         align-items: center;
         z-index: 1;
+      }
+      &-box {
+        flex-direction: column;
+
+        & > .dflex {
+          gap: 0;
+          flex-direction: column;
+        }
       }
     }
     ._hideDesktop {
@@ -1112,6 +1120,11 @@
       }
       &-group {
         flex-direction: column;
+      }
+      &-ico {
+        img {
+          object-position: center;
+        }
       }
       .button {
         &--text {

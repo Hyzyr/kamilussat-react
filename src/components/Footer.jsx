@@ -18,7 +18,8 @@ const Footer = () => {
               </p>
               <div className="footer__row-group">
                 <a
-                  href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x3f6ffd8df8c56ed3:0xf9d4000be83a5356?sa=X&ved=1t:8290&ictx=111"
+                  target="_blank"
+                  href="https://www.google.com/maps/search/Oguzhan+Street+building+41/@37.9185428,58.3706477,16z?entry=ttu&g_ep=EgoyMDI0MDkxMS4wIKXMDSoASAFQAw%3D%3D"
                   className="footer__row-button">
                   <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -33,15 +34,13 @@ const Footer = () => {
                     </svg>
                   </span>
                   <span className="text">
-                    Aşgabat 744000, Turkmenistan
-                    <br />
-                    Beýik Saparmyrat Türkmenbaşy şaýoly 81,
+                    Turkmenistan, Aşgabat 744000 <br />
+                    Kopetdag district, str. Oguzhan, building 41.
                   </span>
                 </a>
-                {/* <a
-                  href="mailto:kamilussat@gmail.com"
-                  className="footer__row-button"
-                >
+                <a
+                  href="mailto:kamilussat@sanly.tm"
+                  className="footer__row-button">
                   <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
                       <path
@@ -54,8 +53,8 @@ const Footer = () => {
                       />
                     </svg>
                   </span>
-                  <span className="text">kamilussat@gmail.com</span>
-                </a> */}
+                  <span className="text">kamilussat@sanly.tm</span>
+                </a>
                 <a href="tel:+99371667221" className="footer__row-button">
                   <span className="ico">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none">
@@ -84,9 +83,9 @@ const Footer = () => {
                 <a href="#" className="footer__row-link">
                   Services
                 </a>
-                <a href="#" className="footer__row-link">
+                {/* <a href="#" className="footer__row-link">
                   Testimonials
-                </a>
+                </a> */}
                 <a href="#" className="footer__row-link">
                   Projects
                 </a>
